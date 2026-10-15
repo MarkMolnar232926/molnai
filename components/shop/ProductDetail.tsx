@@ -165,7 +165,7 @@ export function ProductDetail({ product }: { product: Product }) {
               </Button>
             </div>
             <p className="mt-4 flex items-center gap-2 text-sm text-muted">
-              <Coins className="h-4 w-4 text-r-gold" aria-hidden="true" />
+              <Coins className="h-4 w-4 text-brand-green-dark" aria-hidden="true" />
               <span>
                 Ezzel a vásárlással <strong className="text-ink">{Math.floor((price * qty) / 100)} Hűségpontot</strong> gyűjtesz.
               </span>
@@ -179,7 +179,7 @@ export function ProductDetail({ product }: { product: Product }) {
               { icon: Headphones, text: "Szakmai tanácsadás telefonon" },
             ].map(({ icon: Icon, text }) => (
               <li key={text} className="flex items-center gap-2.5 rounded-2xl bg-white/60 p-3">
-                <Icon className="h-5 w-5 shrink-0 text-r-green" aria-hidden="true" />
+                <Icon className="h-5 w-5 shrink-0 text-brand-green-dark" aria-hidden="true" />
                 {text}
               </li>
             ))}

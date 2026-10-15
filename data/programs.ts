@@ -6,7 +6,7 @@ export const PRO_TIERS = [
     discount: "10%",
     who: "Személyi edzők, masszőrök, sportszakemberek",
     perks: ["10% kedvezmény a teljes kínálatra", "Szakmai hírlevél és termékbemutatók", "Kiemelt telefonos tanácsadás"],
-    color: "#f5c928",
+    color: "#8ec85e",
   },
   {
     id: "gyogytornasz",
@@ -14,7 +14,7 @@ export const PRO_TIERS = [
     discount: "15%",
     who: "Gyógytornászok, fizioterapeuták, orvosok",
     perks: ["15% kedvezmény működési nyilvántartási számmal", "Rendelői kiszerelések (45 m-es tekercsek)", "Ingyenes páciens-gyakorlatlapok"],
-    color: "#2e9b57",
+    color: "#3aa062",
     featured: true,
   },
   {
@@ -23,7 +23,7 @@ export const PRO_TIERS = [
     discount: "akár 20%",
     who: "Rendelők, sportklubok, viszonteladók",
     perks: ["Egyedi árlista és keretszerződés", "Dedikált kapcsolattartó", "Fizetés átutalással, 15 napos határidővel"],
-    color: "#2563c9",
+    color: "#1162a9",
   },
 ] as const;
 

@@ -13,7 +13,7 @@ export function Swatch({ level, size = 14, ring = false }: { level: ResistanceLe
           level === "silver" || level === "gold"
             ? `linear-gradient(135deg, ${r.color}, #fff 45%, ${r.color})`
             : r.color,
-        boxShadow: ring ? "0 0 0 2px #fff, 0 0 0 3.5px rgb(11 21 48 / .25)" : "inset 0 0 0 1px rgb(11 21 48 / .15)",
+        boxShadow: ring ? "0 0 0 2px #fff, 0 0 0 3.5px rgb(10 37 64 / .25)" : "inset 0 0 0 1px rgb(10 37 64 / .15)",
       }}
       title={r.name}
       aria-hidden="true"

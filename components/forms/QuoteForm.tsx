@@ -60,7 +60,7 @@ export function QuoteForm() {
               <label
                 key={c.slug}
                 className={cn(
-                  "inline-flex min-h-10 cursor-pointer items-center gap-2 rounded-full border px-4 text-sm font-medium transition-colors has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-r-blue/20",
+                  "inline-flex min-h-10 cursor-pointer items-center gap-2 rounded-full border px-4 text-sm font-medium transition-colors has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-brand/20",
                   on ? "border-ink bg-ink text-white" : "border-line hover:border-ink/40",
                 )}
               >
@@ -81,7 +81,7 @@ export function QuoteForm() {
       <Field label="Darabszám, létszám" name="size" placeholder="pl. 3 csoport, 60 gyerek" />
       <Field label="Részletek, terméklista" name="message" textarea className="sm:col-span-2" placeholder="Írd le, mire van szükségetek, vagy másold be a terméklistát." />
       <label className="flex items-start gap-3 text-sm sm:col-span-2">
-        <input type="checkbox" required className="mt-0.5 h-5 w-5 shrink-0 accent-[#0b1530]" />
+        <input type="checkbox" required className="mt-0.5 h-5 w-5 shrink-0 accent-[#0a2540]" />
         Hozzájárulok, hogy a Thera-Team az ajánlatadás céljából felvegye velem a kapcsolatot.
       </label>
       <div className="sm:col-span-2">

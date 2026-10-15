@@ -11,7 +11,7 @@ export function ProductBadges({ product, compact = false }: { product: Product; 
   else if (isOnSale(product)) badges.push({ text: "Akció", cls: "bg-sale text-white" });
   if (product.tags?.includes("bestseller")) badges.push({ text: "Kedvenc", cls: "bg-ink text-white" });
   if (product.tags?.includes("szakmai")) badges.push({ text: "Szakmai", cls: "bg-white text-ink" });
-  if (product.slug.startsWith("bemutato")) badges.push({ text: "Bemutató darab", cls: "bg-r-yellow text-ink" });
+  if (product.slug.startsWith("bemutato")) badges.push({ text: "Bemutató darab", cls: "bg-brand-lime text-ink" });
   if (!badges.length) return null;
   return (
     <div className="flex flex-wrap gap-1.5">

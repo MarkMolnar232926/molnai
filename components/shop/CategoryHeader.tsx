@@ -31,7 +31,7 @@ export function CategoryHeader({
           <h1 className="mt-3 text-h1 font-extrabold">{title}</h1>
           <p className="mt-4 max-w-xl text-lg text-ink/75">{description}</p>
         </div>
-        <span className="spectrum-rule absolute inset-x-0 bottom-0 !rounded-none" aria-hidden="true" />
+        <span className="brand-rule absolute inset-x-0 bottom-0 !rounded-none" aria-hidden="true" />
       </div>
     </header>
   );

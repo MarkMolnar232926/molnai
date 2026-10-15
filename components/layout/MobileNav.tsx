@@ -20,7 +20,7 @@ export function MobileNav({ open, onClose }: { open: boolean; onClose: () => voi
       side="left"
       title={<Logo />}
       footer={
-        <a href={SITE.phoneHref} className="flex min-h-12 items-center justify-center gap-2 rounded-full bg-r-green font-semibold text-white">
+        <a href={SITE.phoneHref} className="flex min-h-12 items-center justify-center gap-2 rounded-full bg-brand-green-dark font-semibold text-white">
           <Phone className="h-4 w-4" aria-hidden="true" /> {SITE.phone}
         </a>
       }

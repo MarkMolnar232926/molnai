@@ -72,7 +72,7 @@ export function Header() {
         className={cn(
           "sticky top-0 z-40 border-b transition-[background-color,border-color,box-shadow] duration-300",
           scrolled || megaOpen
-            ? "border-line bg-paper/90 shadow-[0_8px_30px_-20px_rgb(11_21_48/0.4)] backdrop-blur-xl"
+            ? "border-line bg-paper/90 shadow-[0_8px_30px_-20px_rgb(10_37_64/0.4)] backdrop-blur-xl"
             : "border-transparent bg-paper",
         )}
         onMouseLeave={closeSoon}
@@ -88,7 +88,7 @@ export function Header() {
             <Menu className="h-6 w-6" />
           </button>
 
-          <Logo />
+          <Logo priority />
 
           <nav aria-label="Fő navigáció" className="ml-4 hidden lg:block">
             <ul className="flex items-center gap-1">
@@ -124,7 +124,7 @@ export function Header() {
                       )}
                     >
                       {item.label}
-                      {active && <span className="spectrum-rule absolute inset-x-3 bottom-1.5 !h-[3px]" aria-hidden="true" />}
+                      {active && <span className="brand-rule absolute inset-x-3 bottom-1.5 !h-[3px]" aria-hidden="true" />}
                     </Link>
                   </li>
                 );
@@ -151,7 +151,7 @@ export function Header() {
               className="mx-1 hidden items-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold text-ink sm:inline-flex"
               aria-label={`Hívjon minket: ${SITE.phone}`}
             >
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-r-green/10 text-r-green 2xl:h-9 2xl:w-9">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-green/10 text-brand-green-dark 2xl:h-9 2xl:w-9">
                 <Phone className="h-4 w-4" aria-hidden="true" />
               </span>
               <span className="hidden 2xl:inline">{SITE.phone}</span>
@@ -163,7 +163,7 @@ export function Header() {
             <Link href="/kedvencek" className={cn(iconBtn, "hidden sm:inline-flex")} aria-label={`Kedvencek${hydrated && favCount ? `, ${favCount} termék` : ""}`}>
               <Heart className="h-5 w-5" />
               {hydrated && favCount > 0 && (
-                <span className="absolute right-1 top-1 flex h-[1.125rem] min-w-[1.125rem] items-center justify-center rounded-full bg-r-red px-1 text-[0.65rem] font-bold text-white">
+                <span className="absolute right-1 top-1 flex h-[1.125rem] min-w-[1.125rem] items-center justify-center rounded-full bg-brand px-1 text-[0.65rem] font-bold text-white">
                   {favCount}
                 </span>
               )}
@@ -177,7 +177,7 @@ export function Header() {
             >
               <ShoppingBag className="h-5 w-5" />
               {hydrated && count > 0 && (
-                <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-r-yellow px-1 text-[0.7rem] font-bold text-ink ring-2 ring-paper">
+                <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-brand-lime px-1 text-[0.7rem] font-bold text-ink ring-2 ring-paper">
                   {count}
                 </span>
               )}

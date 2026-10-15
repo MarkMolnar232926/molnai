@@ -16,7 +16,7 @@ export default function ProductsPage() {
         description="Rehabilitáció, sport és gyerekfejlesztés: válogass a teljes kínálatból, vagy szűkíts kategóriára, márkára és ellenállás-szintre."
         count={PRODUCTS.length}
         art="band"
-        tone="#2563c9"
+        tone="#1162a9"
         crumbs={[{ label: "Termékek" }]}
       />
       <CategoryView slug="all" />

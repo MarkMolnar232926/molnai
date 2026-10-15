@@ -102,7 +102,7 @@ export function Checkout() {
           <Link href="/kosar" className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold">
             <ArrowLeft className="h-4 w-4" aria-hidden="true" /> Vissza a kosárhoz
           </Link>
-          <span className="inline-flex items-center gap-2 rounded-full bg-r-yellow/30 px-3 py-1.5 text-xs font-semibold">
+          <span className="inline-flex items-center gap-2 rounded-full bg-brand-sky/15 px-3 py-1.5 text-xs font-semibold">
             <ShieldCheck className="h-4 w-4" aria-hidden="true" /> Demó pénztár
           </span>
         </div>
@@ -118,7 +118,7 @@ export function Checkout() {
                 aria-current={i === step ? "step" : undefined}
               >
                 <span className="block h-1.5 overflow-hidden rounded-full bg-line">
-                  <span className={cn("block h-full bg-spectrum transition-[width] duration-700", i <= step ? "w-full" : "w-0")} />
+                  <span className={cn("block h-full bg-brand-gradient transition-[width] duration-700", i <= step ? "w-full" : "w-0")} />
                 </span>
                 <span className={cn("mt-3 flex items-center gap-2 text-sm font-semibold", i <= step ? "text-ink" : "text-muted")}>
                   <span
@@ -192,7 +192,7 @@ export function Checkout() {
                 </fieldset>
                 <div className="rounded-3xl bg-white p-5">
                   <label className="flex min-h-11 cursor-pointer items-center gap-3 font-semibold">
-                    <input type="checkbox" checked={company} onChange={(e) => setCompany(e.target.checked)} className="h-5 w-5 accent-[#0b1530]" />
+                    <input type="checkbox" checked={company} onChange={(e) => setCompany(e.target.checked)} className="h-5 w-5 accent-[#0a2540]" />
                     Céges / intézményi számlát kérek
                   </label>
                   {company && (
@@ -249,7 +249,7 @@ export function Checkout() {
                 </ul>
                 <Field label="Megjegyzés a rendeléshez" textarea rows={3} name="note" />
                 <label className="flex cursor-pointer items-start gap-3 text-sm">
-                  <input type="checkbox" required className="mt-0.5 h-5 w-5 shrink-0 accent-[#0b1530]" />
+                  <input type="checkbox" required className="mt-0.5 h-5 w-5 shrink-0 accent-[#0a2540]" />
                   <span>
                     Elolvastam és elfogadom az{" "}
                     <Link href="/info/aszf" className="font-semibold underline underline-offset-4">

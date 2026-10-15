@@ -27,7 +27,7 @@ export function EducationBlog() {
         <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
           <Reveal>
             <aside className="on-dark flex h-full flex-col rounded-[var(--radius-card)] bg-ink p-7 text-white sm:p-8" aria-labelledby="oktatas">
-              <GraduationCap className="h-10 w-10 text-r-yellow" aria-hidden="true" />
+              <GraduationCap className="h-10 w-10 text-brand-lime" aria-hidden="true" />
               <h3 id="oktatas" className="mt-6 text-h3 font-bold">Oktatás szakembereknek</h3>
               <p className="mt-3 text-white/75">
                 Gyakorlati workshopok a TheraBand rendszer terápiás és edzésmódszertani alkalmazásáról. Kreditpontos képzések előkészítés alatt.
@@ -35,7 +35,7 @@ export function EducationBlog() {
               <ul className="mt-8 space-y-3">
                 {WORKSHOPS.map((w) => (
                   <li key={w.title} className="flex items-center gap-4 rounded-2xl bg-white/5 p-4">
-                    <span className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-xl bg-r-yellow text-ink">
+                    <span className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-xl bg-brand-lime text-ink">
                       <CalendarDays className="h-4 w-4" aria-hidden="true" />
                       <span className="text-[0.65rem] font-bold">{w.date}</span>
                     </span>

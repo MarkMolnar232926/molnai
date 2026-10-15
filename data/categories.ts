@@ -10,7 +10,7 @@ export const CATEGORIES: Category[] = [
     short: "TheraBand",
     description:
       "Az eredeti, színkódolt ellenállás-rendszer. Gumiszalagok, kötelek, labdák és egyensúlyozó eszközök a rehabilitációtól a csúcssportig.",
-    accent: "#e03a3e",
+    accent: "#1162a9",
     art: "band",
     subs: subs([
       "Erősítő gumiszalagok",
@@ -35,7 +35,7 @@ export const CATEGORIES: Category[] = [
     short: "Rehabilitáció",
     description:
       "Rögzítők, tape-ek, hűsítő krémek és fasciaterápiás eszközök: minden, ami a gyógyulás útját támogatja.",
-    accent: "#2e9b57",
+    accent: "#3aa062",
     art: "brace",
     subs: subs([
       "Ízületi rögzítők",
@@ -56,7 +56,7 @@ export const CATEGORIES: Category[] = [
     short: "Funkcionális",
     description:
       "Kettlebellek, battle rope, plyobox és agility eszközök a robbanékony, mindennapokban is használható erőért.",
-    accent: "#2563c9",
+    accent: "#1a8fd0",
     art: "kettlebell",
     subs: subs([
       "Agility és robbanékonyság",
@@ -79,7 +79,7 @@ export const CATEGORIES: Category[] = [
     name: "Edzés típus szerint",
     short: "Edzés típus",
     description: "Sportágra és edzésformára szabott válogatás, hogy elsőre a megfelelő eszközt találd meg.",
-    accent: "#c99a2e",
+    accent: "#237a46",
     art: "ball",
     subs: subs([
       "Röplabda",
@@ -104,7 +104,7 @@ export const CATEGORIES: Category[] = [
     short: "Gyerek fejlesztés",
     description:
       "GONGE, Montessori és szenzoros integrációs eszközök otthonra, óvodába, iskolába: játékos mozgás, tudatos fejlődés.",
-    accent: "#f5c928",
+    accent: "#8ec85e",
     art: "tiles",
     subs: subs([
       "GONGE",
@@ -123,7 +123,7 @@ export const CATEGORIES: Category[] = [
     name: "Kutya terápia",
     short: "Kutya terápia",
     description: "Egyensúlyozó és erősítő eszközök kutyák rehabilitációjához és kondicionálásához.",
-    accent: "#a9b0ba",
+    accent: "#5bb8ea",
     art: "dog",
     subs: subs(["Egyensúlyozó eszközök", "Erősítés és kondicionálás"]),
     highlight: ["egyensulyozo-eszkozok", "erosites-es-kondicionalas"],
@@ -150,20 +150,20 @@ export const WORLDS = [
     text: "Gyógytornászok által választott eszközök a teljes felépülési úthoz.",
     href: "/termekek/rehabilitacio",
     art: "band" as const,
-    tone: "#2e9b57",
+    tone: "#3aa062",
   },
   {
     title: "Sport és fitnesz",
     text: "Funkcionális erő, robbanékonyság és mobilitás, otthon és a teremben.",
     href: "/termekek/funkcionalis",
     art: "kettlebell" as const,
-    tone: "#2563c9",
+    tone: "#1162a9",
   },
   {
     title: "Gyerek fejlesztés",
     text: "Szenzoros és mozgásfejlesztő eszközök, amelyek játéknak tűnnek.",
     href: "/termekek/gyerek-fejleszto",
     art: "tiles" as const,
-    tone: "#f5c928",
+    tone: "#8ec85e",
   },
 ];

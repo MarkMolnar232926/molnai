@@ -8,6 +8,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RESISTANCE } from "@/data/resistance";
 import { TIMELINE } from "@/data/site";
+import { BRAND_SHADES } from "@/lib/brand";
 
 export const metadata: Metadata = {
   title: "Rólunk",
@@ -35,7 +36,7 @@ export default function AboutPage() {
         eyebrow="Rólunk · 1995 óta"
         title={
           <>
-            Harminc éve <span className="text-spectrum">társ a mozgásban.</span>
+            Harminc éve <span className="text-brand-gradient">társ a mozgásban.</span>
           </>
         }
         text="Egy szalaggal kezdődött. Ma a rehabilitáció, a sport és a gyerekfejlesztés teljes eszköztárát kínáljuk, változatlan szakmai alázattal."
@@ -59,7 +60,7 @@ export default function AboutPage() {
             </div>
             <p className="mt-6 text-xs text-muted">Minta szöveg, a cég valós történetével pontosítandó.</p>
           </Reveal>
-          <PhotoPlaceholder caption="a Thera-Team csapata a raktárban" tone="#e03a3e" className="aspect-[4/3] w-full" />
+          <PhotoPlaceholder caption="a Thera-Team csapata a raktárban" tone="#1a8fd0" className="aspect-[4/3] w-full" />
         </div>
 
         <dl className="mt-20 grid grid-cols-2 gap-4 lg:grid-cols-4">
@@ -109,7 +110,7 @@ export default function AboutPage() {
         <ol className="grid gap-4 md:grid-cols-5">
           {TIMELINE.map((t, i) => (
             <Reveal as="li" key={t.year} delay={i * 80} className="relative rounded-[var(--radius-card)] bg-white p-6">
-              <span className="absolute inset-x-0 top-0 h-1.5 rounded-t-[var(--radius-card)]" style={{ background: RESISTANCE[i + 1].color }} aria-hidden="true" />
+              <span className="absolute inset-x-0 top-0 h-1.5 rounded-t-[var(--radius-card)]" style={{ background: BRAND_SHADES[i + 1] }} aria-hidden="true" />
               <p className="font-display text-3xl font-extrabold">{t.year}</p>
               <h3 className="mt-2 text-lg font-bold">{t.title}</h3>
               <p className="mt-2 text-sm text-muted">{t.text}</p>
@@ -125,7 +126,7 @@ export default function AboutPage() {
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {VALUES.map(({ icon: Icon, title, text }, i) => (
               <Reveal as="li" key={title} delay={i * 80} className="rounded-[var(--radius-card)] bg-white p-7">
-                <Icon className="h-8 w-8 text-r-red" aria-hidden="true" />
+                <Icon className="h-8 w-8 text-brand" aria-hidden="true" />
                 <h3 className="mt-5 text-xl font-bold">{title}</h3>
                 <p className="mt-2 text-muted">{text}</p>
               </Reveal>
@@ -139,7 +140,7 @@ export default function AboutPage() {
         <ul className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {TEAM.map((m, i) => (
             <li key={m.role}>
-              <PhotoPlaceholder caption={m.caption} tone={RESISTANCE[i + 2].color} className="aspect-[3/4] w-full" />
+              <PhotoPlaceholder caption={m.caption} tone={BRAND_SHADES[i * 2]} className="aspect-[3/4] w-full" />
               <p className="mt-4 font-display text-lg font-bold">[Név]</p>
               <p className="text-sm text-muted">{m.role}</p>
             </li>

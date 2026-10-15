@@ -46,7 +46,7 @@ function renderBlock(b: Block, i: number) {
         <ul key={i} className="space-y-3">
           {b.items.map((it) => (
             <li key={it} className="flex gap-3">
-              <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-r-red" aria-hidden="true" />
+              <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-brand-green" aria-hidden="true" />
               {it}
             </li>
           ))}
@@ -54,7 +54,7 @@ function renderBlock(b: Block, i: number) {
       );
     case "quote":
       return (
-        <figure key={i} className="!my-12 border-l-4 border-r-yellow pl-6">
+        <figure key={i} className="!my-12 border-l-4 border-brand-green pl-6">
           <blockquote className="font-display text-2xl font-semibold leading-snug">„{b.text}”</blockquote>
           {b.cite && <figcaption className="mt-3 text-sm text-muted">{b.cite}</figcaption>}
         </figure>
@@ -99,7 +99,7 @@ export default async function PostPage({ params }: Props) {
         <div className="mx-auto mt-12 max-w-2xl space-y-6 text-[1.125rem] leading-relaxed text-ink/85">
           <p className="text-xl font-medium text-ink">{post.excerpt}</p>
           {post.body.map(renderBlock)}
-          <p className="rounded-2xl bg-r-yellow/20 p-4 text-sm">Demó cikk: a tartalom a koncepció illusztrálására készült.</p>
+          <p className="rounded-2xl bg-brand-sky/10 p-4 text-sm">Demó cikk: a tartalom a koncepció illusztrálására készült.</p>
         </div>
 
         {products.length > 0 && (

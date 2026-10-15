@@ -29,7 +29,7 @@ export const POSTS: Post[] = [
     date: "2026-09-24",
     readMinutes: 6,
     author: "Thera-Team szakmai csapat",
-    tone: "#e03a3e",
+    tone: "#1a8fd0",
     art: "band",
     mock: true,
     body: [
@@ -76,7 +76,7 @@ export const POSTS: Post[] = [
     date: "2026-09-10",
     readMinutes: 4,
     author: "Thera-Team szakmai csapat",
-    tone: "#2563c9",
+    tone: "#1162a9",
     art: "disc",
     mock: true,
     body: [
@@ -109,7 +109,7 @@ export const POSTS: Post[] = [
     date: "2026-08-28",
     readMinutes: 7,
     author: "Thera-Team szakmai csapat",
-    tone: "#f5c928",
+    tone: "#8ec85e",
     art: "tiles",
     mock: true,
     body: [
@@ -140,7 +140,7 @@ export const POSTS: Post[] = [
     date: "2026-08-12",
     readMinutes: 5,
     author: "Thera-Team szakmai csapat",
-    tone: "#2e9b57",
+    tone: "#3aa062",
     art: "ball",
     mock: true,
     body: [

@@ -115,7 +115,7 @@ export function ResistanceGuide() {
             <div className="flex flex-col">
               <div className="relative rounded-3xl bg-white/60 p-4 backdrop-blur-sm">
                 <svg viewBox="0 0 400 220" className="w-full" role="img" aria-label={`${r.name} szalag kifeszítve`}>
-                  <line x1="40" y1="190" x2="360" y2="190" stroke="#0b1530" strokeOpacity=".08" strokeWidth="2" strokeDasharray="4 6" />
+                  <line x1="40" y1="190" x2="360" y2="190" stroke="#0a2540" strokeOpacity=".08" strokeWidth="2" strokeDasharray="4 6" />
                   <m.path
                     key={`b-${r.id}`}
                     initial={{ d: bandPath(index, pulled) }}
@@ -135,7 +135,7 @@ export function ResistanceGuide() {
                     strokeWidth="3"
                     strokeLinecap="round"
                   />
-                  <rect x={L - 34} y={CY - 26} width="34" height="52" rx="12" fill="#0b1530" />
+                  <rect x={L - 34} y={CY - 26} width="34" height="52" rx="12" fill="#0a2540" />
                   <m.rect
                     key={`r-${r.id}`}
                     initial={{ x: pulled }}
@@ -145,7 +145,7 @@ export function ResistanceGuide() {
                     width="34"
                     height="52"
                     rx="12"
-                    fill="#0b1530"
+                    fill="#0a2540"
                   />
                   <text x="200" y="210" textAnchor="middle" fontSize="11" fill="#5b6275" fontFamily="var(--font-inter)">
                     Illusztráció · a vastagság az ellenállást jelzi
@@ -191,7 +191,7 @@ export function ResistanceGuide() {
               value={index}
               onChange={(e) => setIndex(Number(e.target.value))}
               aria-valuetext={`${r.name}, ${r.level}, körülbelül ${r.kg.toString().replace(".", ",")} kilogramm`}
-              className="range-spectrum"
+              className="range-resistance"
             />
             {/* Positioned to line up with the thumb centre (thumb is 30px wide). */}
             <div className="relative h-12 sm:h-14">
@@ -207,7 +207,7 @@ export function ResistanceGuide() {
                 >
                   <span
                     className={cn("h-3 w-3 rounded-full transition-transform", i === index && "scale-150")}
-                    style={{ background: lvl.color, boxShadow: "inset 0 0 0 1px rgb(11 21 48/.2)" }}
+                    style={{ background: lvl.color, boxShadow: "inset 0 0 0 1px rgb(10 37 64/.2)" }}
                   />
                   <span className="hidden whitespace-nowrap text-xs font-medium text-muted md:block">{lvl.level}</span>
                 </button>

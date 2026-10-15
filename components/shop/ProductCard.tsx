@@ -25,7 +25,7 @@ export function ProductCard({ product, layout = "grid", tinted = false }: { prod
   return (
     <article
       className={cn(
-        "group relative flex h-full rounded-[var(--radius-card)] p-2 transition-shadow duration-500 hover:shadow-[0_30px_60px_-30px_rgb(11_21_48/0.35)]",
+        "group relative flex h-full rounded-[var(--radius-card)] p-2 transition-shadow duration-500 hover:shadow-[0_30px_60px_-30px_rgb(10_37_64/0.35)]",
         list ? "flex-row gap-4" : "flex-col",
         tinted ? "bg-paper" : "bg-white",
       )}

@@ -50,7 +50,7 @@ function CheckRow({ checked, onChange, label, count }: { checked: boolean; onCha
       <input type="checkbox" checked={checked} onChange={onChange} className="peer sr-only" />
       <span
         className={cn(
-          "inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-r-blue peer-focus-visible:ring-offset-2",
+          "inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-brand peer-focus-visible:ring-offset-2",
           checked ? "border-ink bg-ink text-white" : "border-ink/25 bg-white group-hover:border-ink/50",
         )}
         aria-hidden="true"
@@ -70,8 +70,8 @@ function Switch({ checked, onChange, label }: { checked: boolean; onChange: (v: 
       <input type="checkbox" role="switch" checked={checked} onChange={(e) => onChange(e.target.checked)} className="peer sr-only" />
       <span
         className={cn(
-          "relative inline-flex h-7 w-12 shrink-0 items-center rounded-full transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-r-blue peer-focus-visible:ring-offset-2",
-          checked ? "bg-r-green" : "bg-ink/20",
+          "relative inline-flex h-7 w-12 shrink-0 items-center rounded-full transition-colors peer-focus-visible:ring-2 peer-focus-visible:ring-brand peer-focus-visible:ring-offset-2",
+          checked ? "bg-brand-green-dark" : "bg-ink/20",
         )}
         aria-hidden="true"
       >
