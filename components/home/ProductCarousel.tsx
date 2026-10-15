@@ -73,10 +73,8 @@ export function ProductCarousel() {
         </div>
       </div>
       <div className="container-x">
+        <div id="carousel-panel" role="tabpanel" aria-labelledby={`tab-${TABS[tab].id}`}>
         <ul
-          id="carousel-panel"
-          role="tabpanel"
-          aria-labelledby={`tab-${TABS[tab].id}`}
           ref={track}
           className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 pb-6"
         >
@@ -86,6 +84,7 @@ export function ProductCarousel() {
             </li>
           ))}
         </ul>
+        </div>
       </div>
     </section>
   );

@@ -42,7 +42,7 @@ export function Hero() {
 
       <div className="container-x relative flex min-h-[calc(100svh-var(--header-h)-2.25rem)] flex-col justify-center pb-10 pt-14 lg:min-h-[44rem] lg:py-24">
         <div className="max-w-3xl">
-          <p className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white/85 backdrop-blur">
+          <p className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-ink-2/80 px-4 py-2 text-sm font-medium text-white/85">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-r-yellow opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-r-yellow" />
@@ -80,7 +80,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative border-t border-white/10 bg-ink/60 backdrop-blur-md">
+      <div className="relative border-t border-white/10 bg-ink/85">
         <ul className="container-x grid grid-cols-2 gap-x-4 gap-y-6 py-6 lg:grid-cols-4 lg:py-7">
           {TRUST.map(({ icon: Icon, title, text }) => (
             <li key={title} className="flex items-start gap-3">

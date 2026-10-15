@@ -17,9 +17,9 @@ export function Reviews() {
           </>
         }
       />
-      <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <ul className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 lg:grid-cols-4">
         {REVIEWS.map((r, i) => (
-          <Reveal as="li" key={r.name} delay={i * 80}>
+          <Reveal as="li" key={r.name} delay={i * 80} className="w-[85%] shrink-0 snap-start md:w-auto">
             <figure className="flex h-full flex-col rounded-[var(--radius-card)] bg-white p-7">
               <Quote className="h-8 w-8 text-r-red" aria-hidden="true" />
               <Stars rating={r.rating} className="mt-5" />

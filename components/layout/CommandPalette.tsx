@@ -135,7 +135,7 @@ export function CommandPalette() {
                 onChange={(e) => setQ(e.target.value)}
                 onKeyDown={onInputKey}
                 placeholder="Keress terméket, márkát, kategóriát…"
-                className="h-16 w-full bg-transparent text-lg outline-none placeholder:text-muted/80"
+                className="h-16 w-full bg-transparent text-lg outline-none placeholder:text-muted/80 focus-visible:outline-none"
                 role="combobox"
                 aria-expanded={results.length > 0}
                 aria-controls="search-results"

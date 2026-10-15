@@ -2,7 +2,8 @@ import { discountPercent } from "@/lib/format";
 import type { Product } from "@/lib/types";
 import { fromPrice, isOnSale } from "@/data/products";
 
-export function ProductBadges({ product }: { product: Product }) {
+/** `compact` shows only the most important badge on small screens. */
+export function ProductBadges({ product, compact = false }: { product: Product; compact?: boolean }) {
   const fp = fromPrice(product);
   const pct = discountPercent(product.price, product.oldPrice) ?? discountPercent(fp.price, fp.oldPrice);
   const badges: { text: string; cls: string }[] = [];
@@ -14,8 +15,11 @@ export function ProductBadges({ product }: { product: Product }) {
   if (!badges.length) return null;
   return (
     <div className="flex flex-wrap gap-1.5">
-      {badges.map((b) => (
-        <span key={b.text} className={`rounded-full px-2.5 py-1 text-[0.7rem] font-bold leading-none ${b.cls}`}>
+      {badges.map((b, i) => (
+        <span
+          key={b.text}
+          className={`rounded-full px-2.5 py-1 text-[0.7rem] font-bold leading-none ${b.cls} ${compact && i > 0 ? "hidden sm:inline" : ""}`}
+        >
           {b.text}
         </span>
       ))}

@@ -19,7 +19,7 @@ export function Price({
   const sizes = { sm: "text-base", md: "text-lg", lg: "text-3xl sm:text-4xl" };
   return (
     <div className={cn("flex flex-wrap items-baseline gap-x-2 gap-y-0.5", className)}>
-      <span className={cn("font-display font-bold tracking-tight", sizes[size], pct ? (dark ? "text-[#ff9a9d]" : "text-sale") : dark ? "text-white" : "text-ink")}>
+      <span className={cn("whitespace-nowrap font-display font-bold tracking-tight", sizes[size], pct ? (dark ? "text-[#ff9a9d]" : "text-sale") : dark ? "text-white" : "text-ink")}>
         {formatPrice(price)}
         {from && <span className={cn("text-[0.7em] font-semibold", dark ? "text-white/60" : "text-muted")}>-tól</span>}
       </span>

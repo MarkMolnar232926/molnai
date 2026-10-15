@@ -193,13 +193,15 @@ export function ResistanceGuide() {
               aria-valuetext={`${r.name}, ${r.level}, körülbelül ${r.kg.toString().replace(".", ",")} kilogramm`}
               className="range-spectrum"
             />
-            <div className="mt-1 flex justify-between px-[3px]">
+            {/* Positioned to line up with the thumb centre (thumb is 30px wide). */}
+            <div className="relative h-12 sm:h-14">
               {RESISTANCE.map((lvl, i) => (
                 <button
                   key={lvl.id}
                   type="button"
                   onClick={() => setIndex(i)}
-                  className="flex min-h-11 min-w-11 flex-col items-center justify-start gap-1"
+                  className="absolute top-0 flex min-h-11 w-9 -translate-x-1/2 flex-col items-center justify-start gap-1 pt-1 sm:w-auto sm:min-w-11"
+                  style={{ left: `calc(15px + (100% - 30px) * ${i / (RESISTANCE.length - 1)})` }}
                   aria-label={`${lvl.name} – ${lvl.level}`}
                   aria-pressed={i === index}
                 >
@@ -207,7 +209,7 @@ export function ResistanceGuide() {
                     className={cn("h-3 w-3 rounded-full transition-transform", i === index && "scale-150")}
                     style={{ background: lvl.color, boxShadow: "inset 0 0 0 1px rgb(11 21 48/.2)" }}
                   />
-                  <span className="hidden text-xs font-medium text-muted sm:block">{lvl.level}</span>
+                  <span className="hidden whitespace-nowrap text-xs font-medium text-muted md:block">{lvl.level}</span>
                 </button>
               ))}
             </div>

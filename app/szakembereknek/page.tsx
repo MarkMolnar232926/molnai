@@ -83,7 +83,7 @@ export default function ProPage() {
               <article className={`relative h-full overflow-hidden rounded-[var(--radius-card)] p-8 ${"featured" in t ? "on-dark bg-ink text-white" : "bg-white"}`}>
                 <span className="absolute inset-x-0 top-0 h-2" style={{ background: t.color }} aria-hidden="true" />
                 {"featured" in t && (
-                  <span className="absolute right-6 top-7 rounded-full bg-r-green px-3 py-1 text-xs font-bold text-white">Legnépszerűbb</span>
+                  <span className="mb-4 inline-block rounded-full bg-r-green px-3 py-1 text-xs font-bold text-white">Legnépszerűbb</span>
                 )}
                 <h3 className="text-xl font-bold">{t.name}</h3>
                 <p className={`mt-1 text-sm ${"featured" in t ? "text-white/70" : "text-muted"}`}>{t.who}</p>
@@ -119,7 +119,7 @@ export default function ProPage() {
             <tbody className="divide-y divide-line">
               {COMPARE.map((row) => (
                 <tr key={row.label}>
-                  <th scope="row" className="p-5 font-medium">
+                  <th scope="row" className="min-w-48 p-5 font-medium">
                     {row.label}
                   </th>
                   {row.values.map((v, i) => (

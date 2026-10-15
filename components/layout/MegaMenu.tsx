@@ -55,7 +55,7 @@ export function MegaMenu({ open, onEnter, onClose }: { open: boolean; onEnter: (
                         onClick={onClose}
                         className="inline-flex items-center gap-1 px-2 py-1.5 text-sm font-semibold text-ink"
                       >
-                        Mind a {c.subs.length} kategória <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                        Összes alkategória ({c.subs.length}) <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                       </Link>
                     </li>
                   </ul>
@@ -85,7 +85,7 @@ export function MegaMenu({ open, onEnter, onClose }: { open: boolean; onEnter: (
                 <BadgePercent className="h-6 w-6" aria-hidden="true" />
                 <span className="flex-1">
                   AKCIÓK
-                  <span className="block font-sans text-xs font-medium text-white/85">Outlet, bemutató darabok, mennyiségi kedvezmény</span>
+                  <span className="block font-sans text-xs font-medium text-white">Outlet, bemutató darabok, mennyiségi kedvezmény</span>
                 </span>
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>

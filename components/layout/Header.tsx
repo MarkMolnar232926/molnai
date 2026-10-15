@@ -63,8 +63,8 @@ export function Header() {
     hoverTimer.current = window.setTimeout(() => setMegaOpen(false), 180);
   };
 
-  const iconBtn =
-    "relative inline-flex h-11 w-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-ink/5";
+  // Display is set per use (inline-flex or hidden sm:inline-flex) since classes are concatenated, not merged.
+  const iconBtn = "relative h-11 w-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-ink/5";
 
   return (
     <>
@@ -77,10 +77,10 @@ export function Header() {
         )}
         onMouseLeave={closeSoon}
       >
-        <div className="container-x flex h-[var(--header-h)] items-center gap-4">
+        <div className="container-x flex h-[var(--header-h)] items-center gap-2 sm:gap-4">
           <button
             type="button"
-            className={cn(iconBtn, "-ml-2 lg:hidden")}
+            className={cn(iconBtn, "-ml-2 inline-flex lg:hidden")}
             aria-label="Menü megnyitása"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(true)}
@@ -96,7 +96,7 @@ export function Header() {
                 const active = pathname === item.href || pathname.startsWith(item.href + "/");
                 if ("mega" in item) {
                   return (
-                    <li key={item.href} onMouseEnter={openSoon}>
+                    <li key={item.href} onMouseMove={megaOpen ? undefined : openSoon}>
                       <button
                         type="button"
                         aria-expanded={megaOpen}
@@ -142,7 +142,7 @@ export function Header() {
               <span>Keresés</span>
               <kbd className="whitespace-nowrap rounded-md lg:max-xl:hidden 2xl:ml-auto border border-line bg-paper px-1.5 py-0.5 font-sans text-[0.7rem] font-semibold text-muted">Ctrl K</kbd>
             </button>
-            <button type="button" onClick={() => setSearchOpen(true)} className={cn(iconBtn, "md:hidden")} aria-label="Keresés">
+            <button type="button" onClick={() => setSearchOpen(true)} className={cn(iconBtn, "inline-flex md:hidden")} aria-label="Keresés">
               <Search className="h-5 w-5" />
             </button>
 
@@ -160,7 +160,7 @@ export function Header() {
             <Link href="/fiok" className={cn(iconBtn, "hidden sm:inline-flex")} aria-label="Fiókom">
               <User className="h-5 w-5" />
             </Link>
-            <Link href="/kedvencek" className={iconBtn} aria-label={`Kedvencek${hydrated && favCount ? `, ${favCount} termék` : ""}`}>
+            <Link href="/kedvencek" className={cn(iconBtn, "hidden sm:inline-flex")} aria-label={`Kedvencek${hydrated && favCount ? `, ${favCount} termék` : ""}`}>
               <Heart className="h-5 w-5" />
               {hydrated && favCount > 0 && (
                 <span className="absolute right-1 top-1 flex h-[1.125rem] min-w-[1.125rem] items-center justify-center rounded-full bg-r-red px-1 text-[0.65rem] font-bold text-white">
@@ -171,7 +171,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setCartOpen(true)}
-              className={cn(iconBtn, "bg-ink text-white hover:bg-ink-3", bump && "scale-110")}
+              className={cn(iconBtn, "inline-flex bg-ink text-white hover:bg-ink-3", bump && "scale-110")}
               style={{ transition: "transform .4s var(--ease-out-expo), background-color .2s" }}
               aria-label={`Kosár${hydrated ? `, ${count} termék` : ""}`}
             >

@@ -37,8 +37,9 @@ const PRICE_PRESETS: [number | null, number | null, string][] = [
 function Group({ title, children }: { title: string; children: ReactNode }) {
   return (
     <fieldset className="border-b border-line py-6 first:pt-0">
-      <legend className="mb-4 font-display text-base font-bold">{title}</legend>
-      {children}
+      {/* Floated legend sits in normal flow instead of on the fieldset border. */}
+      <legend className="float-left mb-4 w-full font-display text-base font-bold">{title}</legend>
+      <div className="clear-both">{children}</div>
     </fieldset>
   );
 }

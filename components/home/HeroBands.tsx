@@ -31,10 +31,10 @@ export function HeroBands({ className = "" }: { className?: string }) {
       canvas.width = Math.round(w * dpr);
       canvas.height = Math.round(h * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      if (reduced) draw(4000);
+      if (reduced || !running) draw(clock);
     };
 
-    const N = 90;
+    const N = 48;
     const top = new Float32Array((N + 1) * 2);
     const bot = new Float32Array((N + 1) * 2);
     const fac = new Float32Array(N + 1);
@@ -84,16 +84,17 @@ export function HeroBands({ className = "" }: { className?: string }) {
         ctx.fillStyle = colors[i];
         ctx.fill();
 
-        // Shade the twisting parts, highlight the flat parts.
+        // Shade only the twisting (narrow) parts; flat parts keep the pure colour.
         for (let s = 0; s < N; s++) {
           const f = (fac[s] + fac[s + 1]) / 2;
+          if (f >= 0.55) continue;
           ctx.beginPath();
           ctx.moveTo(top[s * 2], top[s * 2 + 1]);
           ctx.lineTo(top[s * 2 + 2], top[s * 2 + 3]);
           ctx.lineTo(bot[s * 2 + 2], bot[s * 2 + 3]);
           ctx.lineTo(bot[s * 2], bot[s * 2 + 1]);
           ctx.closePath();
-          ctx.fillStyle = f < 0.55 ? `rgba(11,21,48,${(0.55 - f) * 0.7})` : `rgba(255,255,255,${(f - 0.55) * 0.22})`;
+          ctx.fillStyle = `rgba(11,21,48,${(0.55 - f) * 0.7})`;
           ctx.fill();
         }
 
@@ -110,10 +111,36 @@ export function HeroBands({ className = "" }: { className?: string }) {
       ctx.restore();
     }
 
+    // ~30 fps is plenty for slow-moving bands and halves the main-thread cost.
+    // The bands settle after a while without interaction (saves battery, lets the page go idle)
+    // and wake up again on pointer movement or scroll.
+    const ACTIVE_MS = 9000;
+    let last = 0;
+    let prevT = 0;
+    let clock = 4000; // animation time, advances only while running so resuming doesn't jump
+    let activeUntil = 0;
+    let visible = false;
     const loop = (t: number) => {
       if (!running) return;
-      draw(t);
+      clock += prevT ? Math.min(64, t - prevT) : 16;
+      prevT = t;
+      if (t - last > 32) {
+        last = t;
+        draw(clock);
+      }
+      if (t > activeUntil) {
+        running = false;
+        return;
+      }
       raf = requestAnimationFrame(loop);
+    };
+    const wake = () => {
+      activeUntil = performance.now() + ACTIVE_MS;
+      if (visible && !running) {
+        running = true;
+        prevT = 0;
+        raf = requestAnimationFrame(loop);
+      }
     };
 
     const ro = new ResizeObserver(resize);
@@ -124,33 +151,43 @@ export function HeroBands({ className = "" }: { className?: string }) {
       const rect = canvas.getBoundingClientRect();
       pointer.tx = (e.clientX - rect.left) / rect.width;
       pointer.ty = (e.clientY - rect.top) / rect.height;
+      wake();
     };
 
     let io: IntersectionObserver | undefined;
+    let idle = 0;
     if (reduced) {
       draw(4000);
     } else {
       window.addEventListener("pointermove", onMove, { passive: true });
+      window.addEventListener("scroll", wake, { passive: true });
       io = new IntersectionObserver(([entry]) => {
-        const vis = entry.isIntersecting;
-        if (vis && !running) {
-          running = true;
-          raf = requestAnimationFrame(loop);
-        } else if (!vis) {
+        visible = entry.isIntersecting;
+        if (visible) wake();
+        else {
           running = false;
           cancelAnimationFrame(raf);
         }
       });
-      io.observe(canvas);
-      raf = requestAnimationFrame(loop);
+      // Paint one static frame now; start the loop once the page is idle so it doesn't compete with loading.
+      draw(4000);
+      running = false;
+      const start = () => {
+        io!.observe(canvas);
+      };
+      const hasIdle = typeof window.requestIdleCallback === "function";
+      idle = hasIdle ? window.requestIdleCallback(start, { timeout: 2500 }) : window.setTimeout(start, 1200);
     }
 
     return () => {
       running = false;
       cancelAnimationFrame(raf);
+      if (typeof window.cancelIdleCallback === "function") window.cancelIdleCallback(idle);
+      window.clearTimeout(idle);
       ro.disconnect();
       io?.disconnect();
       window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("scroll", wake);
     };
   }, []);
 

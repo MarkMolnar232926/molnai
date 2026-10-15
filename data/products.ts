@@ -1202,10 +1202,6 @@ export const PRODUCTS: Product[] = [
   },
 ];
 
-export const BRANDS = Array.from(new Set(PRODUCTS.map((p) => p.brand))).sort((a, b) =>
-  a.localeCompare(b, "hu"),
-);
-
 export function getProduct(slug: string): Product | undefined {
   return PRODUCTS.find((p) => p.slug === slug);
 }

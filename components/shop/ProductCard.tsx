@@ -41,8 +41,8 @@ export function ProductCard({ product, layout = "grid", tinted = false }: { prod
             className="h-full w-full p-[12%] transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-[1.07] group-hover:-rotate-2"
           />
         </Link>
-        <div className="pointer-events-none absolute left-3 top-3">
-          <ProductBadges product={product} />
+        <div className="pointer-events-none absolute left-3 right-14 top-3">
+          <ProductBadges product={product} compact />
         </div>
         <FavoriteButton slug={product.slug} name={product.name} className="absolute right-2.5 top-2.5 z-10" />
         {!list && (
@@ -58,9 +58,9 @@ export function ProductCard({ product, layout = "grid", tinted = false }: { prod
       </div>
 
       <div className={cn("flex flex-1 flex-col gap-2", list ? "py-2 pr-2" : "px-2 pb-2 pt-4")}>
-        <div className="flex items-center justify-between gap-2">
+        <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1">
           <span className="text-xs font-semibold uppercase tracking-wider text-muted">{product.brand}</span>
-          <Stars rating={product.rating} count={product.reviews} />
+          <Stars rating={product.rating} count={product.reviews} className="[&>span:last-child]:hidden sm:[&>span:last-child]:inline" />
         </div>
         <h3 className="font-sans text-[0.95rem] font-semibold leading-snug tracking-normal">
           <Link href={href} className="line-clamp-2 after:absolute after:inset-0 after:content-[''] focus-visible:outline-none">
@@ -69,7 +69,7 @@ export function ProductCard({ product, layout = "grid", tinted = false }: { prod
         </h3>
         {list && <p className="hidden text-sm text-muted sm:block">{product.short}</p>}
         {swatches.length > 0 && (
-          <div className="flex items-center gap-1" aria-label={`${swatches.length} ellenállás-szint`}>
+          <div className="flex items-center gap-1" role="img" aria-label={`${swatches.length} ellenállás-szint`}>
             {swatches.map((s) => (
               <Swatch key={s} level={s} size={14} />
             ))}
@@ -77,7 +77,7 @@ export function ProductCard({ product, layout = "grid", tinted = false }: { prod
         )}
         <div className="mt-auto flex items-end justify-between gap-2 pt-2">
           <div className="flex flex-col gap-1">
-            <Price price={fp.price} oldPrice={fp.oldPrice} from={fp.hasRange} />
+            <Price price={fp.price} oldPrice={fp.oldPrice} from={fp.hasRange} className="[&>span:first-child]:text-base sm:[&>span:first-child]:text-lg" />
             <StockLabel stock={product.variants?.some((v) => v.stock === "in_stock") ? "in_stock" : product.stock} />
           </div>
           <div className="relative z-10">

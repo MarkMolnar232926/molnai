@@ -67,6 +67,11 @@ export function MobileNav({ open, onClose }: { open: boolean; onClose: () => voi
             </li>
           ))}
           <li>
+            <Link href="/kedvencek" onClick={onClose} className="flex min-h-12 items-center rounded-xl px-3 text-base font-semibold text-muted hover:bg-ink/5">
+              Kedvencek
+            </Link>
+          </li>
+          <li>
             <Link href="/fiok" onClick={onClose} className="flex min-h-12 items-center rounded-xl px-3 text-base font-semibold text-muted hover:bg-ink/5">
               Fiókom
             </Link>

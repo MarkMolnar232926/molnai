@@ -39,7 +39,7 @@ export function CategoryBento() {
                 kind={w.art}
                 tone={w.tone}
                 className={`absolute transition-transform duration-1000 ease-[var(--ease-out-expo)] group-hover:-rotate-6 group-hover:scale-110 ${
-                  i === 0 ? "-right-8 bottom-24 h-64 w-64 lg:h-96 lg:w-96" : "-right-4 bottom-4 h-36 w-36 opacity-90 sm:h-44 sm:w-44"
+                  i === 0 ? "-right-8 bottom-24 h-64 w-64 lg:h-96 lg:w-96" : "right-0 top-14 h-28 w-28 sm:-right-4 sm:bottom-4 sm:top-auto sm:h-44 sm:w-44"
                 }`}
               />
               <div className="relative mt-auto max-w-md p-6 pt-20 sm:p-8 sm:pt-24">
@@ -83,7 +83,7 @@ export function CategoryBento() {
             <BadgePercent className="mx-5 h-10 w-10 shrink-0 transition-transform duration-700 group-hover:rotate-12" aria-hidden="true" />
             <span>
               <span className="block font-display text-xl font-bold">Akciók</span>
-              <span className="text-sm text-white/85">Outlet és bemutató darabok</span>
+              <span className="text-sm text-white">Outlet és bemutató darabok</span>
             </span>
           </Link>
         </Reveal>

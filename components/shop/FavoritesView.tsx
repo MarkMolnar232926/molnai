@@ -11,11 +11,13 @@ export function FavoritesView() {
   const favorites = useShop((s) => s.favorites);
   const items = hydrated ? PRODUCTS.filter((p) => favorites.includes(p.slug)) : [];
 
-  if (!hydrated) return <div className="mt-10 h-64 animate-pulse rounded-3xl bg-white/60" aria-hidden="true" />;
-
   if (items.length === 0) {
+    // Before hydration the empty state is rendered invisibly so its size is reserved (no layout shift).
     return (
-      <div className="mt-10 flex flex-col items-center rounded-[2rem] bg-white px-6 py-20 text-center">
+      <div
+        className={`mt-10 flex flex-col items-center rounded-[2rem] bg-white px-6 py-20 text-center ${hydrated ? "" : "invisible"}`}
+        aria-hidden={!hydrated || undefined}
+      >
         <Heart className="h-12 w-12 text-r-red" aria-hidden="true" />
         <p className="mt-6 font-display text-2xl font-bold">Még nincs kedvenced</p>
         <p className="mt-2 max-w-md text-muted">A termékkártyák szív ikonjával mentheted el, amire később visszatérnél.</p>

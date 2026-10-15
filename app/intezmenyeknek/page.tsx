@@ -22,9 +22,9 @@ const SEGMENTS: { title: string; text: string; href: string; art: ArtKind; tone:
 ];
 
 const TIERS = [
-  { from: "100 000 Ft", pct: "5%", label: "Alap" },
-  { from: "300 000 Ft", pct: "10%", label: "Bővített" },
-  { from: "1 000 000 Ft", pct: "15%", label: "Kiemelt" },
+  { from: "100\u00a0000\u00a0Ft", pct: "5%", label: "Alap" },
+  { from: "300\u00a0000\u00a0Ft", pct: "10%", label: "Bővített" },
+  { from: "1\u00a0000\u00a0000\u00a0Ft", pct: "15%", label: "Kiemelt" },
 ];
 
 const PERKS = [

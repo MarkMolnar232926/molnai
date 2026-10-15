@@ -104,13 +104,13 @@ export function ProductDetail({ product }: { product: Product }) {
                 type="button"
                 onClick={() => setView(v.id)}
                 aria-pressed={view === v.id}
-                aria-label={v.label}
                 className={cn(
                   "relative aspect-[4/3] overflow-hidden rounded-2xl transition-shadow",
                   view === v.id ? "ring-2 ring-ink ring-offset-2 ring-offset-paper" : "opacity-75 hover:opacity-100",
                 )}
                 style={artBackground(tone)}
               >
+                <span className="sr-only">{v.label}</span>
                 {v.id === "photo" ? (
                   <span className="absolute inset-0 flex items-center justify-center text-[0.7rem] font-semibold text-ink/70">[Fotó]</span>
                 ) : (
@@ -166,7 +166,9 @@ export function ProductDetail({ product }: { product: Product }) {
             </div>
             <p className="mt-4 flex items-center gap-2 text-sm text-muted">
               <Coins className="h-4 w-4 text-r-gold" aria-hidden="true" />
-              Ezzel a vásárlással <strong className="text-ink">{Math.floor((price * qty) / 100)} Hűségpontot</strong> gyűjtesz.
+              <span>
+                Ezzel a vásárlással <strong className="text-ink">{Math.floor((price * qty) / 100)} Hűségpontot</strong> gyűjtesz.
+              </span>
             </p>
           </div>
 

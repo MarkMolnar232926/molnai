@@ -49,7 +49,7 @@ export type ArtKind =
   | "brace"
   | "hopscotch";
 
-export type Tag = "uj" | "bestseller" | "szakmai";
+export type Tag = "bestseller" | "szakmai";
 
 export interface Variant {
   id: string;

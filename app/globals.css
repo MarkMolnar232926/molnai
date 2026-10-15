@@ -122,6 +122,27 @@ p { text-wrap: pretty; }
   outline-color: var(--color-r-yellow);
 }
 
+/* Scroll-driven reveal (progressive enhancement) */
+/* Transform only: text keeps full contrast at every moment of the animation. */
+@keyframes reveal {
+  from {
+    transform: translate3d(0, 48px, 0) scale(0.97);
+  }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    [data-reveal] {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry var(--reveal-delay, 0%) entry calc(55% + var(--reveal-delay, 0%));
+    }
+  }
+}
+
+.consented [data-cookie-banner] {
+  display: none;
+}
+
 /* Utilities */
 @utility container-x {
   width: 100%;

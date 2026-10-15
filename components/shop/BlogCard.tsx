@@ -3,7 +3,7 @@ import { ProductArt, artBackground } from "@/components/brand/ProductArt";
 import type { Post } from "@/data/blog";
 import { formatDate } from "@/lib/format";
 
-export function BlogCard({ post, large = false }: { post: Post; large?: boolean }) {
+export function BlogCard({ post, large = false, as: Heading = "h3" }: { post: Post; large?: boolean; as?: "h2" | "h3" }) {
   return (
     <article className="group relative flex h-full flex-col">
       <div className={`relative overflow-hidden rounded-[var(--radius-card)] ${large ? "aspect-[16/10]" : "aspect-[4/3]"}`} style={artBackground(post.tone)}>
@@ -14,11 +14,11 @@ export function BlogCard({ post, large = false }: { post: Post; large?: boolean 
         <p className="text-sm text-muted">
           <time dateTime={post.date}>{formatDate(post.date)}</time> · {post.readMinutes} perc olvasás
         </p>
-        <h3 className={`mt-2 font-bold leading-tight ${large ? "text-h3" : "text-xl"}`}>
+        <Heading className={`mt-2 font-bold leading-tight ${large ? "text-h3" : "text-xl"}`}>
           <Link href={`/blog/${post.slug}`} className="after:absolute after:inset-0 after:content-[''] group-hover:underline group-hover:decoration-2 group-hover:underline-offset-4">
             {post.title}
           </Link>
-        </h3>
+        </Heading>
         <p className="mt-2 text-muted">{post.excerpt}</p>
       </div>
     </article>

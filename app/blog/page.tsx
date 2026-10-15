@@ -21,12 +21,12 @@ export default function BlogPage() {
       />
       <section className="container-x py-16 lg:py-24">
         <Reveal className="mb-16">
-          <BlogCard post={first} large />
+          <BlogCard post={first} large as="h2" />
         </Reveal>
         <ul className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {rest.map((p, i) => (
             <Reveal as="li" key={p.slug} delay={i * 80}>
-              <BlogCard post={p} />
+              <BlogCard post={p} as="h2" />
             </Reveal>
           ))}
         </ul>

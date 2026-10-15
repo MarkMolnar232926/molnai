@@ -242,6 +242,7 @@ export function CategoryView({ slug }: { slug: string }) {
             </div>
           )}
 
+          <h2 className="sr-only">Termékek</h2>
           {results.length === 0 ? (
             <div className="rounded-[var(--radius-card)] bg-white p-12 text-center">
               <p className="font-display text-2xl font-bold">Nincs a szűrésnek megfelelő termék</p>

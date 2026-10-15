@@ -79,7 +79,11 @@ export function Checkout() {
     router.push("/penztar/visszaigazolas");
   };
 
-  if (hydrated && lines.length === 0) {
+  if (!hydrated) {
+    return <div className="container-x min-h-[70vh] pb-24 pt-8" aria-busy="true" />;
+  }
+
+  if (lines.length === 0) {
     return (
       <div className="container-x py-24 text-center">
         <h1 className="text-h2 font-bold">A kosarad üres</h1>

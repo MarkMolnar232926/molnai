@@ -33,23 +33,23 @@ function Toggle({ checked, onChange, label, disabled }: { checked: boolean; onCh
 }
 
 export function CookieBanner() {
-  const [visible, setVisible] = useState(false);
+  // Rendered on the server so it paints with the page; an inline script in <head> hides it
+  // (html.consented) before first paint when consent was already given.
+  const [visible, setVisible] = useState(true);
   const [details, setDetails] = useState(false);
   const [consent, setConsent] = useState<Consent>({ necessary: true, analytics: false, marketing: false, preferences: true });
 
   useEffect(() => {
     try {
-      if (!localStorage.getItem(KEY)) {
-        const t = window.setTimeout(() => setVisible(true), 1200);
-        return () => window.clearTimeout(t);
-      }
+      if (localStorage.getItem(KEY)) setVisible(false);
     } catch {
-      /* storage unavailable: keep the banner hidden */
+      /* storage unavailable: keep asking */
     }
   }, []);
 
   useEffect(() => {
     const reopen = () => {
+      document.documentElement.classList.remove("consented");
       setDetails(true);
       setVisible(true);
     };
@@ -70,9 +70,10 @@ export function CookieBanner() {
     <AnimatePresence>
       {visible && (
         <m.section
+          data-cookie-banner
           role="region"
           aria-label="Süti beállítások"
-          initial={{ opacity: 0, y: 40 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 40 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}

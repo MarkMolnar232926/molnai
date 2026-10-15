@@ -16,14 +16,16 @@ export function CartPage() {
   const totals = cartTotals(lines, SITE.freeShippingFrom, SITE.shippingFee);
 
   return (
-    <div className="container-x pb-24 pt-6 sm:pt-8">
+    <div className="container-x min-h-[80vh] pb-24 pt-6 sm:pt-8">
       <Breadcrumbs items={[{ label: "Kosár" }]} />
       <h1 className="mt-6 text-h1 font-extrabold">Kosár</h1>
 
-      {!hydrated ? (
-        <div className="mt-10 h-64 animate-pulse rounded-3xl bg-white/60" aria-hidden="true" />
-      ) : lines.length === 0 ? (
-        <div className="mt-10 flex flex-col items-center rounded-[2rem] bg-white px-6 py-20 text-center">
+      {!hydrated || lines.length === 0 ? (
+        // Before hydration the empty state is rendered invisibly so its size is reserved (no layout shift).
+        <div
+          className={`mt-10 flex flex-col items-center rounded-[2rem] bg-white px-6 py-20 text-center ${hydrated ? "" : "invisible"}`}
+          aria-hidden={!hydrated || undefined}
+        >
           <ShoppingBag className="h-12 w-12 text-muted" aria-hidden="true" />
           <p className="mt-6 font-display text-2xl font-bold">A kosarad üres</p>
           <p className="mt-2 max-w-md text-muted">Nézz körül a kínálatban, vagy kezdd a TheraBand ellenállás-útmutatóval.</p>
