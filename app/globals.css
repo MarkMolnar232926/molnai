@@ -262,3 +262,107 @@ p { text-wrap: pretty; }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ── Engagement effects ───────────────────────────────────────── */
+
+/* 3D tilt + glare (driven by useTilt) */
+.tilt {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s;
+  transform-style: preserve-3d;
+}
+.tilt:hover {
+  transition: transform 0.12s linear, box-shadow 0.5s;
+}
+.tilt-glare {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s;
+  background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgb(255 255 255 / 0.45), transparent 45%);
+  mix-blend-mode: soft-light;
+}
+.tilt:hover .tilt-glare {
+  opacity: 1;
+}
+
+/* Cursor spotlight on dark surfaces (driven by useSpotlight) */
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s;
+  background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 50%), rgb(91 184 234 / 0.22), transparent 60%);
+}
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Infinite marquee */
+@keyframes marquee-x {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee-x 38s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tilt {
+    transform: none !important;
+  }
+  .marquee-track {
+    animation: none;
+  }
+}
+
+@keyframes finder-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Workout player: band "rep" stretch */
+@keyframes rep {
+  0%,
+  100% {
+    transform: scaleX(0.82);
+  }
+  50% {
+    transform: scaleX(1.12);
+  }
+}
+
+/* Hero content drifts up and fades as the page scrolls (scroll-driven, no JS) */
+@keyframes hero-out {
+  to {
+    transform: translate3d(0, -80px, 0);
+    opacity: 0.15;
+  }
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-parallax {
+      animation: hero-out linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 85vh;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { ArrowRight, Check, Coins } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { Spotlight } from "@/components/ui/Spotlight";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { LOYALTY, PRO_TIERS } from "@/data/programs";
 
@@ -20,7 +21,8 @@ export function ProProgram() {
       <div className="grid gap-4 lg:grid-cols-4">
         {PRO_TIERS.map((t, i) => (
           <Reveal key={t.id} delay={i * 90}>
-            <article
+            <Spotlight
+              as="article"
               className={`relative flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] p-7 ${
                 "featured" in t ? "bg-ink text-white on-dark" : "bg-white"
               }`}
@@ -37,7 +39,7 @@ export function ProProgram() {
                   </li>
                 ))}
               </ul>
-            </article>
+            </Spotlight>
           </Reveal>
         ))}
         <Reveal delay={270}>

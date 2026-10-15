@@ -36,6 +36,16 @@ The identity follows **Thera-Team's own brand**: the logo (`public/brand/thera-t
 - **Imagery**: there is no photography. Products use SVG illustrations (`ProductArt`), and every photo slot is a labelled `PhotoPlaceholder` (`[Fotó: …]`).
 - **Motion**: CSS scroll-driven reveals that need no JS and degrade to static content. Hover states, magnetic CTAs and counters are included, and everything respects `prefers-reduced-motion`.
 
+## Engagement features
+
+- **"Húzd meg a szalagot!"** (`components/home/StretchBand.tsx`): drag (or use arrow keys on) the band in the resistance guide. Elongation and approximate force update live, there are 100% / 200% marks, an overstretch warning and spring-back physics, plus haptic ticks on phones.
+- **Termékválasztó** (`components/engage/ProductFinder.tsx`, `/termekvalaszto`, also on Home): goal → level → budget leads to a personal three-product bundle with the right resistance colour, added to the cart with one click. The rules live in `data/finder.ts`.
+- **7 napos Mozgás-kihívás** (`/kihivas`, Home teaser):
+  - a guided workout player with a timer ring, a get-ready countdown, optional beeps, pause and skip
+  - days unlock one after another, and progress is saved in `localStorage`
+  - finishing a day triggers confetti, and finishing all seven shows a demo coupon
+- **Effects:** a pinned horizontal timeline in the 30-year story, 3D tilt and glare on product cards, a cursor spotlight on dark cards, a brand marquee, a scroll-linked hero fade, and particle bursts on add-to-cart (`lib/confetti.ts`, `lib/useTilt.ts`). All of them respect `prefers-reduced-motion`, and the tilt only runs for mouse users.
+
 ## Structure
 
 ```

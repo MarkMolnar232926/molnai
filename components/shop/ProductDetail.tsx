@@ -15,6 +15,7 @@ import { RESISTANCE_BY_ID } from "@/data/resistance";
 import { SITE } from "@/data/site";
 import { cn, formatPrice } from "@/lib/format";
 import { useShop, useUI } from "@/lib/store";
+import { burst } from "@/lib/confetti";
 import type { Product } from "@/lib/types";
 import { FavoriteButton } from "./FavoriteButton";
 import { ProductBadges } from "./ProductBadges";
@@ -58,8 +59,9 @@ export function ProductDetail({ product }: { product: Product }) {
     return () => io.disconnect();
   }, []);
 
-  const add = () => {
+  const add = (e: React.MouseEvent<HTMLButtonElement>) => {
     addToCart(product.slug, variantId, qty);
+    burst(e.currentTarget, 24);
     showToast(`${qty} × ${product.name}${variant ? ` (${variant.label})` : ""} a kosárba került`);
     setAdded(true);
     window.setTimeout(() => setAdded(false), 1600);
@@ -76,7 +78,7 @@ export function ProductDetail({ product }: { product: Product }) {
       <SearchParam name="valtozat" onValue={onVariantParam} />
       <div className="grid gap-8 lg:grid-cols-[1.15fr_1fr] lg:gap-14">
         {/* Gallery */}
-        <div className="lg:sticky lg:top-[calc(var(--header-h)+1.5rem)] lg:self-start">
+        <div className="min-w-0 lg:sticky lg:top-[calc(var(--header-h)+1.5rem)] lg:self-start">
           <div className="relative aspect-square overflow-hidden rounded-[2rem] transition-[background] duration-700" style={artBackground(tone)}>
             {view === "photo" ? (
               <PhotoPlaceholder caption={`${product.name} használat közben`} tone={tone} className="absolute inset-0 !rounded-none" />
@@ -121,8 +123,8 @@ export function ProductDetail({ product }: { product: Product }) {
           </div>
         </div>
 
-        {/* Buy box */}
-        <div>
+        {/* Buy box (min-w-0 lets the tab bar scroll instead of widening the grid) */}
+        <div className="min-w-0">
           <p className="text-sm font-semibold uppercase tracking-wider text-muted">{product.brand}</p>
           <h1 className="mt-2 text-h2 font-extrabold">{product.name}</h1>
           <Stars rating={product.rating} count={product.reviews} className="mt-3" />

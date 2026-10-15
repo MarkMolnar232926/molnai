@@ -122,3 +122,21 @@ export function cartTotals(lines: ResolvedLine[], freeFrom: number, fee: number)
   const shipping = subtotal === 0 || subtotal >= freeFrom ? 0 : fee;
   return { subtotal, savings, count, shipping, total: subtotal + shipping, points: Math.floor(subtotal / 100) };
 }
+
+/** 7-day challenge progress, persisted per browser. */
+interface ChallengeState {
+  completed: number[];
+  complete: (day: number) => void;
+  reset: () => void;
+}
+
+export const useChallenge = create<ChallengeState>()(
+  persist(
+    (set) => ({
+      completed: [],
+      complete: (day) => set((s) => ({ completed: s.completed.includes(day) ? s.completed : [...s.completed, day].sort((a, b) => a - b) })),
+      reset: () => set({ completed: [] }),
+    }),
+    { name: "thera-team-challenge", storage: createJSONStorage(() => localStorage), skipHydration: true },
+  ),
+);

@@ -8,35 +8,13 @@ import { ButtonLink } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RESISTANCE } from "@/data/resistance";
 import { cn } from "@/lib/format";
+import { StretchBand } from "./StretchBand";
 
 const MAX_KG = RESISTANCE[RESISTANCE.length - 1].kg;
-const L = 74;
-const CY = 112;
-
-function bandPath(i: number, right: number) {
-  const th = 16 + i * 2.6;
-  const sag = 26 - i * 2.6;
-  const t = CY - th / 2;
-  const b = CY + th / 2;
-  return `M${L} ${t} C ${L + 90} ${t + sag}, ${right - 90} ${t + sag}, ${right} ${t} L ${right} ${b} C ${right - 90} ${b + sag}, ${L + 90} ${b + sag}, ${L} ${b} Z`;
-}
-
-function highlightPath(i: number, right: number) {
-  const th = 16 + i * 2.6;
-  const sag = 26 - i * 2.6;
-  const y = CY - th / 2 + 4;
-  return `M${L + 6} ${y} C ${L + 90} ${y + sag}, ${right - 90} ${y + sag}, ${right - 6} ${y}`;
-}
-
-const ease = [0.34, 1.56, 0.64, 1] as const;
-
 export function ResistanceGuide() {
   const [index, setIndex] = useState(2);
   const r = RESISTANCE[index];
   const sliderId = useId();
-  const restRight = 326;
-  const pulled = 354 - index * 2;
-  const light = r.ink !== "#ffffff";
 
   return (
     <section id="ellenallas" className="bg-paper-2 py-20 lg:py-28" aria-labelledby="ellenallas-title">
@@ -113,45 +91,7 @@ export function ResistanceGuide() {
 
             {/* Visual */}
             <div className="flex flex-col">
-              <div className="relative rounded-3xl bg-white/60 p-4 backdrop-blur-sm">
-                <svg viewBox="0 0 400 220" className="w-full" role="img" aria-label={`${r.name} szalag kifeszítve`}>
-                  <line x1="40" y1="190" x2="360" y2="190" stroke="#0a2540" strokeOpacity=".08" strokeWidth="2" strokeDasharray="4 6" />
-                  <m.path
-                    key={`b-${r.id}`}
-                    initial={{ d: bandPath(index, pulled) }}
-                    animate={{ d: bandPath(index, restRight) }}
-                    transition={{ duration: 1.1, ease }}
-                    style={{ fill: r.color, transition: "fill .5s" }}
-                    stroke={r.id === "black" ? "#3a3a44" : "none"}
-                  />
-                  <m.path
-                    key={`h-${r.id}`}
-                    initial={{ d: highlightPath(index, pulled) }}
-                    animate={{ d: highlightPath(index, restRight) }}
-                    transition={{ duration: 1.1, ease }}
-                    fill="none"
-                    stroke="#fff"
-                    strokeOpacity={light ? 0.6 : 0.3}
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-                  <rect x={L - 34} y={CY - 26} width="34" height="52" rx="12" fill="#0a2540" />
-                  <m.rect
-                    key={`r-${r.id}`}
-                    initial={{ x: pulled }}
-                    animate={{ x: restRight }}
-                    transition={{ duration: 1.1, ease }}
-                    y={CY - 26}
-                    width="34"
-                    height="52"
-                    rx="12"
-                    fill="#0a2540"
-                  />
-                  <text x="200" y="210" textAnchor="middle" fontSize="11" fill="#5b6275" fontFamily="var(--font-inter)">
-                    Illusztráció · a vastagság az ellenállást jelzi
-                  </text>
-                </svg>
-              </div>
+              <StretchBand level={index} color={r.color} kg={r.kg} name={r.name} />
 
               <div className="mt-6 flex h-36 items-end gap-1.5 sm:gap-2" aria-hidden="true">
                 {RESISTANCE.map((lvl, i) => (
