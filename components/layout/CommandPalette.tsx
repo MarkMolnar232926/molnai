@@ -18,6 +18,8 @@ type Result =
   | { kind: "page"; href: string; title: string; meta: string };
 
 const PAGES: Result[] = [
+  { kind: "page", href: "/termekvalaszto", title: "Termékválasztó", meta: "3 kérdés, személyre szabott csomag" },
+  { kind: "page", href: "/kihivas", title: "7 napos Mozgás-kihívás", meta: "Napi 3 perc egy szalaggal" },
   { kind: "page", href: "/szakembereknek", title: "Szakembereknek", meta: "Kedvezményprogram" },
   { kind: "page", href: "/intezmenyeknek", title: "Intézményeknek", meta: "Ajánlatkérés" },
   { kind: "page", href: "/termekek/akciok", title: "Akciók", meta: "Outlet és kedvezmények" },
@@ -32,7 +34,7 @@ const INDEX = PRODUCTS.map((p) => ({
   hay: normalize(`${p.name} ${p.brand} ${p.short} ${p.sub}`),
 }));
 
-const SUGGESTED = ["gumiszalag", "Gonge", "Biofreeze", "szenzoros", "kettlebell"];
+const SUGGESTED = ["gumiszalag", "kihívás", "Gonge", "Biofreeze", "szenzoros", "kettlebell"];
 
 function search(q: string): Result[] {
   const terms = normalize(q).split(/\s+/).filter(Boolean);

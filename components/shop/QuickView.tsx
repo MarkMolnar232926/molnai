@@ -13,6 +13,7 @@ import { useDialogBehavior } from "@/components/ui/Sheet";
 import { getProduct, getVariant } from "@/data/products";
 import { RESISTANCE_BY_ID } from "@/data/resistance";
 import { useShop, useUI } from "@/lib/store";
+import { burst } from "@/lib/confetti";
 import { ProductBadges } from "./ProductBadges";
 import { QtyStepper } from "./QtyStepper";
 import { VariantPicker } from "./VariantPicker";
@@ -93,8 +94,9 @@ function QuickViewBody({ slug, onDone }: { slug: string; onDone: () => void }) {
           <QtyStepper value={qty} onChange={(n) => setQty(Math.max(1, n))} label={product.name} />
           <Button
             className="flex-1"
-            onClick={() => {
+            onClick={(e) => {
               addToCart(product.slug, variantId, qty);
+              burst(e.currentTarget, 24);
               showToast(`${product.name} a kosárba került`);
               onDone();
               setCartOpen(true);

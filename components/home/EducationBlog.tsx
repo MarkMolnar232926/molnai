@@ -3,6 +3,7 @@ import { ArrowUpRight, CalendarDays, GraduationCap } from "lucide-react";
 import { BlogCard } from "@/components/shop/BlogCard";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { Spotlight } from "@/components/ui/Spotlight";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { POSTS } from "@/data/blog";
 
@@ -26,7 +27,7 @@ export function EducationBlog() {
         />
         <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
           <Reveal>
-            <aside className="on-dark flex h-full flex-col rounded-[var(--radius-card)] bg-ink p-7 text-white sm:p-8" aria-labelledby="oktatas">
+            <Spotlight as="aside" className="on-dark flex h-full flex-col rounded-[var(--radius-card)] bg-ink p-7 text-white sm:p-8" aria-labelledby="oktatas">
               <GraduationCap className="h-10 w-10 text-brand-lime" aria-hidden="true" />
               <h3 id="oktatas" className="mt-6 text-h3 font-bold">Oktatás szakembereknek</h3>
               <p className="mt-3 text-white/75">
@@ -52,7 +53,7 @@ export function EducationBlog() {
                   Érdekel a képzés
                 </ButtonLink>
               </div>
-            </aside>
+            </Spotlight>
           </Reveal>
           <div className="grid gap-8 sm:grid-cols-2">
             {POSTS.slice(0, 2).map((p, i) => (

@@ -33,6 +33,8 @@ const COLUMNS = [
       { href: "/intezmenyeknek", label: "Intézményi Partner Program" },
       { href: "/intezmenyeknek#ajanlatkeres", label: "Ajánlatkérés" },
       { href: "/blog", label: "Oktatás és blog" },
+      { href: "/kihivas", label: "7 napos Mozgás-kihívás" },
+      { href: "/termekvalaszto", label: "Termékválasztó" },
     ],
   },
   {

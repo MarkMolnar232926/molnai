@@ -6,6 +6,7 @@ import { PhotoPlaceholder } from "@/components/brand/PhotoPlaceholder";
 import { ButtonLink } from "@/components/ui/Button";
 import { Faq } from "@/components/ui/Faq";
 import { Reveal } from "@/components/ui/Reveal";
+import { Spotlight } from "@/components/ui/Spotlight";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { LOYALTY, PRO_TIERS } from "@/data/programs";
 
@@ -80,7 +81,7 @@ export default function ProPage() {
         <div className="grid gap-4 lg:grid-cols-3">
           {PRO_TIERS.map((t, i) => (
             <Reveal key={t.id} delay={i * 90}>
-              <article className={`relative h-full overflow-hidden rounded-[var(--radius-card)] p-8 ${"featured" in t ? "on-dark bg-ink text-white" : "bg-white"}`}>
+              <Spotlight as="article" className={`relative h-full overflow-hidden rounded-[var(--radius-card)] p-8 ${"featured" in t ? "on-dark bg-ink text-white" : "bg-white"}`}>
                 <span className="absolute inset-x-0 top-0 h-2" style={{ background: t.color }} aria-hidden="true" />
                 {"featured" in t && (
                   <span className="mb-4 inline-block rounded-full bg-brand-green-dark px-3 py-1 text-xs font-bold text-white">Legnépszerűbb</span>
@@ -96,7 +97,7 @@ export default function ProPage() {
                     </li>
                   ))}
                 </ul>
-              </article>
+              </Spotlight>
             </Reveal>
           ))}
         </div>

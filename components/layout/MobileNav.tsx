@@ -66,6 +66,14 @@ export function MobileNav({ open, onClose }: { open: boolean; onClose: () => voi
               </Link>
             </li>
           ))}
+          <li className="grid grid-cols-2 gap-2 px-1 py-2">
+            <Link href="/termekvalaszto" onClick={onClose} className="flex min-h-12 items-center justify-center rounded-2xl bg-brand/10 px-3 text-sm font-semibold text-brand">
+              Termékválasztó
+            </Link>
+            <Link href="/kihivas" onClick={onClose} className="flex min-h-12 items-center justify-center rounded-2xl bg-brand-green/10 px-3 text-sm font-semibold text-brand-green-dark">
+              7 napos kihívás
+            </Link>
+          </li>
           <li>
             <Link href="/kedvencek" onClick={onClose} className="flex min-h-12 items-center rounded-xl px-3 text-base font-semibold text-muted hover:bg-ink/5">
               Kedvencek

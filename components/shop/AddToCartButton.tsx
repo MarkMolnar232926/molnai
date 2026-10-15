@@ -1,7 +1,8 @@
 "use client";
 
 import { Check, Plus, ShoppingBag } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { burst } from "@/lib/confetti";
 import { cn } from "@/lib/format";
 import { useShop, useUI } from "@/lib/store";
 import type { Product } from "@/lib/types";
@@ -16,6 +17,7 @@ export function AddToCartButton({ product, variant = "icon" }: { product: Produc
   const showToast = useUI((s) => s.showToast);
   const [done, setDone] = useState(false);
   const needsChoice = !!product.variants?.length;
+  const btn = useRef<HTMLButtonElement>(null);
 
   const onClick = () => {
     if (needsChoice) {
@@ -23,6 +25,7 @@ export function AddToCartButton({ product, variant = "icon" }: { product: Produc
       return;
     }
     addToCart(product.slug);
+    burst(btn.current);
     showToast(`${product.name} a kosárba került`);
     setDone(true);
     window.setTimeout(() => setDone(false), 1400);
@@ -33,6 +36,7 @@ export function AddToCartButton({ product, variant = "icon" }: { product: Produc
   if (variant === "full") {
     return (
       <button
+        ref={btn}
         type="button"
         onClick={onClick}
         aria-label={label}
@@ -49,6 +53,7 @@ export function AddToCartButton({ product, variant = "icon" }: { product: Produc
 
   return (
     <button
+      ref={btn}
       type="button"
       onClick={onClick}
       aria-label={label}

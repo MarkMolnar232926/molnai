@@ -2,7 +2,7 @@
 
 import { LazyMotion, MotionConfig } from "framer-motion";
 import { useEffect, type ReactNode } from "react";
-import { useShop } from "@/lib/store";
+import { useChallenge, useShop } from "@/lib/store";
 import { CartDrawer } from "./CartDrawer";
 import { CommandPalette } from "./CommandPalette";
 import { CookieBanner } from "./CookieBanner";
@@ -15,6 +15,7 @@ const loadFeatures = () => import("./motion-features").then((m) => m.default);
 export function Providers({ children }: { children: ReactNode }) {
   useEffect(() => {
     void useShop.persist.rehydrate();
+    void useChallenge.persist.rehydrate();
   }, []);
 
   return (

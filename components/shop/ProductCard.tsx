@@ -10,6 +10,7 @@ import { Swatch } from "@/components/ui/Swatch";
 import { fromPrice } from "@/data/products";
 import { cn } from "@/lib/format";
 import { useUI } from "@/lib/store";
+import { useTilt } from "@/lib/useTilt";
 import type { Product } from "@/lib/types";
 import { AddToCartButton } from "./AddToCartButton";
 import { FavoriteButton } from "./FavoriteButton";
@@ -21,11 +22,13 @@ export function ProductCard({ product, layout = "grid", tinted = false }: { prod
   const swatches = product.variants?.map((v) => v.resistance).filter((r): r is NonNullable<typeof r> => !!r) ?? [];
   const href = `/termek/${product.slug}`;
   const list = layout === "list";
+  const tiltRef = useTilt<HTMLElement>(list ? 0 : 5);
 
   return (
     <article
+      ref={tiltRef}
       className={cn(
-        "group relative flex h-full rounded-[var(--radius-card)] p-2 transition-shadow duration-500 hover:shadow-[0_30px_60px_-30px_rgb(10_37_64/0.35)]",
+        "tilt group relative flex h-full rounded-[var(--radius-card)] p-2 transition-shadow duration-500 hover:shadow-[0_30px_60px_-30px_rgb(10_37_64/0.35)]",
         list ? "flex-row gap-4" : "flex-col",
         tinted ? "bg-paper" : "bg-white",
       )}
@@ -85,6 +88,7 @@ export function ProductCard({ product, layout = "grid", tinted = false }: { prod
           </div>
         </div>
       </div>
+      <span className="tilt-glare z-[5]" aria-hidden="true" />
     </article>
   );
 }
