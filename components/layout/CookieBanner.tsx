@@ -25,7 +25,7 @@ function Toggle({ checked, onChange, label, disabled }: { checked: boolean; onCh
       aria-label={label}
       disabled={disabled}
       onClick={() => onChange?.(!checked)}
-      className={`relative inline-flex h-7 w-12 shrink-0 items-center rounded-full transition-colors ${checked ? "bg-r-green" : "bg-ink/20"} disabled:opacity-60`}
+      className={`relative inline-flex h-7 w-12 shrink-0 items-center rounded-full transition-colors ${checked ? "bg-brand-green-dark" : "bg-ink/20"} disabled:opacity-60`}
     >
       <span className={`inline-block h-5 w-5 rounded-full bg-white shadow transition-transform ${checked ? "translate-x-6" : "translate-x-1"}`} />
     </button>
@@ -77,12 +77,12 @@ export function CookieBanner() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 40 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-x-3 bottom-3 z-[55] mx-auto max-w-xl overflow-hidden rounded-3xl bg-ink text-white shadow-[0_30px_80px_-20px_rgb(11_21_48/0.8)] on-dark sm:inset-x-auto sm:left-6"
+          className="fixed inset-x-3 bottom-3 z-[55] mx-auto max-w-xl overflow-hidden rounded-3xl bg-ink text-white shadow-[0_30px_80px_-20px_rgb(10_37_64/0.8)] on-dark sm:inset-x-auto sm:left-6"
         >
-          <div className="spectrum-rule !rounded-none" aria-hidden="true" />
+          <div className="brand-rule !rounded-none" aria-hidden="true" />
           <div className="p-5 sm:p-6">
             <div className="flex items-start gap-3">
-              <Cookie className="mt-0.5 h-6 w-6 shrink-0 text-r-yellow" aria-hidden="true" />
+              <Cookie className="mt-0.5 h-6 w-6 shrink-0 text-brand-lime" aria-hidden="true" />
               <div>
                 <h2 className="font-display text-lg font-bold">Sütiket használunk</h2>
                 <p className="mt-1 text-sm text-muted-dark">

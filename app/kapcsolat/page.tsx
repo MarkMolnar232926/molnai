@@ -25,7 +25,7 @@ export default function ContactPage() {
         <div className="grid gap-10 lg:grid-cols-[1fr_1.5fr]">
           <div className="space-y-4">
             <a href={SITE.phoneHref} className="group flex items-center gap-5 rounded-[var(--radius-card)] bg-ink p-6 text-white on-dark">
-              <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-r-green">
+              <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-green-dark">
                 <Phone className="h-6 w-6" aria-hidden="true" />
               </span>
               <span>
@@ -56,7 +56,7 @@ export default function ContactPage() {
               </dl>
               <p className="mt-3 text-xs text-muted">[Nyitvatartás helyőrző, a valós adatokkal cserélendő.]</p>
             </div>
-            <div className="relative overflow-hidden rounded-[var(--radius-card)] bg-[#e7e2d6]" style={{ aspectRatio: "4/3" }}>
+            <div className="relative overflow-hidden rounded-[var(--radius-card)] bg-[#e3e9ef]" style={{ aspectRatio: "4/3" }}>
               <svg viewBox="0 0 400 300" className="absolute inset-0 h-full w-full" aria-hidden="true">
                 <g stroke="#fff" strokeWidth="10" fill="none" opacity=".9">
                   <path d="M-10 80 L410 120" />
@@ -71,7 +71,7 @@ export default function ContactPage() {
                 <path d="M-10 260 C 100 230, 200 290, 410 250" stroke="#9cc3e6" strokeWidth="18" fill="none" />
               </svg>
               <span className="absolute left-1/2 top-[44%] -translate-x-1/2 -translate-y-full">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full rounded-bl-none bg-r-red text-white shadow-lg" style={{ transform: "rotate(-45deg)" }}>
+                <span className="flex h-12 w-12 items-center justify-center rounded-full rounded-bl-none bg-brand text-white shadow-lg" style={{ transform: "rotate(-45deg)" }}>
                   <MapPin className="h-5 w-5" style={{ transform: "rotate(45deg)" }} aria-hidden="true" />
                 </span>
               </span>

@@ -43,7 +43,7 @@ export function ProRegistrationForm() {
       <Field label="Munkahely / rendelő" name="workplace" />
       <div className="sm:col-span-2">
         <span className="mb-1.5 block text-sm font-semibold">Végzettséget igazoló dokumentum</span>
-        <label className="flex min-h-24 cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-line bg-paper/50 p-4 text-center text-sm text-muted transition-colors hover:border-ink/30 has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-r-blue/20">
+        <label className="flex min-h-24 cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-line bg-paper/50 p-4 text-center text-sm text-muted transition-colors hover:border-ink/30 has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-brand/20">
           <Upload className="h-5 w-5" aria-hidden="true" />
           {file ? <span className="font-semibold text-ink">{file}</span> : <span>Húzd ide a fájlt, vagy kattints a tallózáshoz (PDF, JPG)</span>}
           <input type="file" accept=".pdf,.jpg,.jpeg,.png" className="sr-only" onChange={(e) => setFile(e.target.files?.[0]?.name ?? null)} />
@@ -51,7 +51,7 @@ export function ProRegistrationForm() {
         <p className="mt-1.5 text-xs text-muted">Demó: a fájl nem kerül feltöltésre.</p>
       </div>
       <label className="flex items-start gap-3 text-sm sm:col-span-2">
-        <input type="checkbox" required className="mt-0.5 h-5 w-5 shrink-0 accent-[#0b1530]" />
+        <input type="checkbox" required className="mt-0.5 h-5 w-5 shrink-0 accent-[#0a2540]" />
         Hozzájárulok, hogy a Thera-Team a megadott adataimat a szakmai státuszom ellenőrzése céljából kezelje.
       </label>
       <div className="sm:col-span-2">

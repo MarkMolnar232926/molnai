@@ -24,8 +24,8 @@ export function SectionHeading({
     >
       <div className={align === "center" ? "max-w-3xl" : "max-w-2xl"}>
         {eyebrow && (
-          <p className={`eyebrow mb-4 flex items-center gap-3 ${dark ? "text-r-yellow" : "text-muted"} ${align === "center" ? "justify-center" : ""}`}>
-            <span className="spectrum-rule inline-block w-8" aria-hidden="true" />
+          <p className={`eyebrow mb-4 flex items-center gap-3 ${dark ? "text-brand-lime" : "text-muted"} ${align === "center" ? "justify-center" : ""}`}>
+            <span className="brand-rule inline-block w-8" aria-hidden="true" />
             {eyebrow}
           </p>
         )}

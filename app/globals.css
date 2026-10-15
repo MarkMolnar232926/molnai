@@ -2,20 +2,31 @@
 
 /* ──────────────────────────────────────────────────────────────
    Thera-Team design tokens
-   The resistance spectrum (beige → gold) is the signature motif.
+   Brand colours come from the Thera-Team logo (blue wordmark, blue → green flame).
+   The TheraBand resistance colours (r-*) are product information only:
+   resistance guide, variant swatches, filters, product colour codes.
    ────────────────────────────────────────────────────────────── */
 @theme {
   /* Base */
-  --color-ink: #0b1530;
-  --color-ink-2: #142046;
-  --color-ink-3: #1d2b5a;
-  --color-paper: #f7f5f0;
-  --color-paper-2: #efebe2;
-  --color-line: #e2ddd1;
-  --color-muted: #5b6275;
-  --color-muted-dark: #a9b1c7;
+  --color-ink: #0a2540;
+  --color-ink-2: #0e3157;
+  --color-ink-3: #14406f;
+  --color-paper: #f5f7f9;
+  --color-paper-2: #e8eef4;
+  --color-line: #d9e1ea;
+  --color-muted: #55617a;
+  --color-muted-dark: #a7b6c9;
 
-  /* Resistance spectrum */
+  /* Brand (from the logo) */
+  --color-brand: #1162a9;
+  --color-brand-hover: #0d5391;
+  --color-brand-sky: #1a8fd0;
+  --color-brand-sky-light: #5bb8ea;
+  --color-brand-green: #3aa062;
+  --color-brand-green-dark: #237a46;
+  --color-brand-lime: #8ec85e;
+
+  /* TheraBand resistance scale (product information) */
   --color-r-beige: #d9c5a0;
   --color-r-yellow: #f5c928;
   --color-r-red: #e03a3e;
@@ -60,7 +71,24 @@
 }
 
 :root {
-  --spectrum: linear-gradient(
+  /* The logo's flame: deep blue → sky → green → lime */
+  --brand-gradient: linear-gradient(
+    90deg,
+    var(--color-brand),
+    var(--color-brand-sky),
+    var(--color-brand-green),
+    var(--color-brand-lime)
+  );
+  /* Seamless loop for animated headline words on dark backgrounds */
+  --brand-gradient-loop: linear-gradient(
+    90deg,
+    var(--color-brand-sky-light),
+    var(--color-brand-lime),
+    #c4e59f,
+    var(--color-brand-sky-light)
+  );
+  /* TheraBand resistance scale, light to heavy */
+  --resistance: linear-gradient(
     90deg,
     var(--color-r-beige),
     var(--color-r-yellow),
@@ -70,17 +98,6 @@
     var(--color-r-black),
     var(--color-r-silver),
     var(--color-r-gold)
-  );
-  /* Seamless loop version for animated text */
-  --spectrum-loop: linear-gradient(
-    90deg,
-    var(--color-r-yellow),
-    var(--color-r-red),
-    var(--color-r-green),
-    #4f8df0,
-    var(--color-r-silver),
-    var(--color-r-gold),
-    var(--color-r-yellow)
   );
   --header-h: 4.5rem;
   color-scheme: light;
@@ -108,18 +125,18 @@ h1, h2, h3, h4 {
 p { text-wrap: pretty; }
 
 ::selection {
-  background: var(--color-r-yellow);
+  background: var(--color-brand-lime);
   color: var(--color-ink);
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-r-blue);
+  outline: 3px solid var(--color-brand);
   outline-offset: 3px;
   border-radius: 6px;
 }
 .on-dark :focus-visible,
 .on-dark:focus-visible {
-  outline-color: var(--color-r-yellow);
+  outline-color: var(--color-brand-lime);
 }
 
 /* Scroll-driven reveal (progressive enhancement) */
@@ -153,22 +170,26 @@ p { text-wrap: pretty; }
   @media (width >= 64rem) { padding-inline: 2.5rem; }
 }
 
-@utility bg-spectrum {
-  background-image: var(--spectrum);
+@utility bg-brand-gradient {
+  background-image: var(--brand-gradient);
 }
 
-@utility text-spectrum {
-  background-image: var(--spectrum-loop);
+@utility bg-resistance {
+  background-image: var(--resistance);
+}
+
+@utility text-brand-gradient {
+  background-image: var(--brand-gradient-loop);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-@utility spectrum-rule {
+@utility brand-rule {
   height: 4px;
   border-radius: 999px;
-  background-image: var(--spectrum);
+  background-image: var(--brand-gradient);
 }
 
 @utility eyebrow {
@@ -197,7 +218,7 @@ p { text-wrap: pretty; }
 }
 
 /* Range input styled as the resistance scale */
-.range-spectrum {
+.range-resistance {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
@@ -205,17 +226,17 @@ p { text-wrap: pretty; }
   background: transparent;
   cursor: pointer;
 }
-.range-spectrum::-webkit-slider-runnable-track {
+.range-resistance::-webkit-slider-runnable-track {
   height: 10px;
   border-radius: 999px;
-  background: var(--spectrum);
+  background: var(--resistance);
 }
-.range-spectrum::-moz-range-track {
+.range-resistance::-moz-range-track {
   height: 10px;
   border-radius: 999px;
-  background: var(--spectrum);
+  background: var(--resistance);
 }
-.range-spectrum::-webkit-slider-thumb {
+.range-resistance::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 30px;
   height: 30px;
@@ -223,9 +244,9 @@ p { text-wrap: pretty; }
   border-radius: 999px;
   background: #fff;
   border: 3px solid var(--color-ink);
-  box-shadow: 0 6px 18px rgb(11 21 48 / 0.35);
+  box-shadow: 0 6px 18px rgb(10 37 64 / 0.35);
 }
-.range-spectrum::-moz-range-thumb {
+.range-resistance::-moz-range-thumb {
   width: 24px;
   height: 24px;
   border-radius: 999px;

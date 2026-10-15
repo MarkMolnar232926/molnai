@@ -32,7 +32,7 @@ export function ProProgram() {
               <ul className="mt-6 space-y-2.5 text-sm">
                 {t.perks.map((p) => (
                   <li key={p} className="flex gap-2">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: "featured" in t ? "#6fd39a" : "#1f7a46" }} aria-hidden="true" />
+                    <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: "featured" in t ? "#8ec85e" : "#1f7a46" }} aria-hidden="true" />
                     {p}
                   </li>
                 ))}
@@ -41,8 +41,8 @@ export function ProProgram() {
           </Reveal>
         ))}
         <Reveal delay={270}>
-          <article className="relative flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] bg-r-gold/20 p-7">
-            <span className="absolute inset-x-0 top-0 h-1.5 bg-spectrum" aria-hidden="true" />
+          <article className="relative flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] bg-brand-lime/25 p-7">
+            <span className="absolute inset-x-0 top-0 h-1.5 bg-brand-gradient" aria-hidden="true" />
             <Coins className="h-9 w-9 text-ink" aria-hidden="true" />
             <h3 className="mt-5 text-xl font-bold">{LOYALTY.name}</h3>
             <p className="mt-3 text-sm leading-relaxed text-ink/80">{LOYALTY.rule}</p>

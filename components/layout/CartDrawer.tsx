@@ -54,7 +54,7 @@ export function CartDrawer() {
         <div className="flex h-full flex-col items-center justify-center gap-4 px-8 py-16 text-center">
           <span className="relative inline-flex h-20 w-20 items-center justify-center rounded-full bg-white">
             <ShoppingBag className="h-8 w-8 text-muted" aria-hidden="true" />
-            <span className="spectrum-rule absolute -bottom-2 w-12" aria-hidden="true" />
+            <span className="brand-rule absolute -bottom-2 w-12" aria-hidden="true" />
           </span>
           <p className="font-display text-xl font-bold">A kosarad még üres</p>
           <p className="text-sm text-muted">Kezdd a legnépszerűbb TheraBand szalagokkal, vagy böngéssz a kategóriák között.</p>

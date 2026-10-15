@@ -15,10 +15,10 @@ export const metadata: Metadata = {
 };
 
 const SEGMENTS: { title: string; text: string; href: string; art: ArtKind; tone: string }[] = [
-  { title: "Bölcsődék és óvodák", text: "Szenzoros ösvények, GONGE egyensúlyozók, mozgásfejlesztő csomagok.", href: "/termekek/gyerek-fejleszto", art: "tiles", tone: "#f5c928" },
-  { title: "Iskolák", text: "Tornatermi eszközök, dinamikus ülőpárnák, gyógytestnevelés.", href: "/termekek/gyerek-fejleszto?al=bolcsodeknek-ovodaknak-iskolaknak", art: "disc", tone: "#2563c9" },
-  { title: "Sportklubok", text: "Funkcionális és agility eszközök csapatoknak, rendelői tape-ek.", href: "/termekek/funkcionalis", art: "kettlebell", tone: "#e03a3e" },
-  { title: "Egészségügyi intézmények", text: "Rehabilitációs eszközök, 45 m-es tekercsek, latexmentes változatok.", href: "/termekek/rehabilitacio", art: "band", tone: "#2e9b57" },
+  { title: "Bölcsődék és óvodák", text: "Szenzoros ösvények, GONGE egyensúlyozók, mozgásfejlesztő csomagok.", href: "/termekek/gyerek-fejleszto", art: "tiles", tone: "#8ec85e" },
+  { title: "Iskolák", text: "Tornatermi eszközök, dinamikus ülőpárnák, gyógytestnevelés.", href: "/termekek/gyerek-fejleszto?al=bolcsodeknek-ovodaknak-iskolaknak", art: "disc", tone: "#1162a9" },
+  { title: "Sportklubok", text: "Funkcionális és agility eszközök csapatoknak, rendelői tape-ek.", href: "/termekek/funkcionalis", art: "kettlebell", tone: "#1a8fd0" },
+  { title: "Egészségügyi intézmények", text: "Rehabilitációs eszközök, 45 m-es tekercsek, latexmentes változatok.", href: "/termekek/rehabilitacio", art: "band", tone: "#3aa062" },
 ];
 
 const TIERS = [
@@ -41,7 +41,7 @@ export default function InstitutionsPage() {
         eyebrow="Intézményi Partner Program"
         title={
           <>
-            Felszerelés egész <span className="text-spectrum">csoportoknak.</span>
+            Felszerelés egész <span className="text-brand-gradient">csoportoknak.</span>
           </>
         }
         text="Bölcsődéktől a kórházakig: összeállítjuk a teljes eszközparkot, mennyiségi kedvezménnyel és pályázatbarát dokumentációval."
@@ -80,7 +80,7 @@ export default function InstitutionsPage() {
           <ol className="grid gap-4 md:grid-cols-3">
             {TIERS.map((t, i) => (
               <Reveal as="li" key={t.label} delay={i * 100} className="relative overflow-hidden rounded-[var(--radius-card)] bg-white/5 p-8">
-                <span className="absolute inset-x-0 bottom-0 h-2 bg-spectrum" style={{ clipPath: `inset(0 ${100 - (i + 1) * 33.3}% 0 0)` }} aria-hidden="true" />
+                <span className="absolute inset-x-0 bottom-0 h-2 bg-brand-gradient" style={{ clipPath: `inset(0 ${100 - (i + 1) * 33.3}% 0 0)` }} aria-hidden="true" />
                 <p className="text-sm text-white/65">{t.label} · bruttó {t.from} felett</p>
                 <p className="mt-4 font-display text-7xl font-extrabold">{t.pct}</p>
                 <p className="mt-2 text-white/75">kedvezmény a teljes rendelésre</p>
@@ -91,7 +91,7 @@ export default function InstitutionsPage() {
           <ul className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {PERKS.map(({ icon: Icon, title, text }) => (
               <li key={title}>
-                <Icon className="h-7 w-7 text-r-yellow" aria-hidden="true" />
+                <Icon className="h-7 w-7 text-brand-lime" aria-hidden="true" />
                 <p className="mt-4 font-display text-lg font-bold">{title}</p>
                 <p className="mt-1 text-white/70">{text}</p>
               </li>

@@ -27,7 +27,7 @@ export function Toast() {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="pointer-events-auto flex max-w-md items-center gap-3 rounded-full bg-ink py-2 pl-4 pr-2 text-sm text-white shadow-2xl on-dark"
           >
-            <CheckCircle2 className="h-5 w-5 shrink-0 text-r-green" aria-hidden="true" />
+            <CheckCircle2 className="h-5 w-5 shrink-0 text-brand-green-dark" aria-hidden="true" />
             <span className="line-clamp-1">{toast.text}</span>
             <button
               type="button"

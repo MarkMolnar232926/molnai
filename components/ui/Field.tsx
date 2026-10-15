@@ -2,7 +2,7 @@ import { useId, type ComponentProps, type ReactNode } from "react";
 import { cn } from "@/lib/format";
 
 const control =
-  "w-full rounded-2xl border border-line bg-white px-4 text-[0.95rem] text-ink transition-colors placeholder:text-muted/70 hover:border-ink/30 focus:border-ink focus:outline-none focus-visible:outline-none focus:ring-4 focus:ring-r-blue/15 user-invalid:border-sale";
+  "w-full rounded-2xl border border-line bg-white px-4 text-[0.95rem] text-ink transition-colors placeholder:text-muted/70 hover:border-ink/30 focus:border-ink focus:outline-none focus-visible:outline-none focus:ring-4 focus:ring-brand/15 user-invalid:border-sale";
 
 export function Field({
   label,
@@ -68,7 +68,7 @@ export function ChoiceCard({
   return (
     <label
       className={cn(
-        "relative flex cursor-pointer items-center gap-4 rounded-2xl border bg-white p-4 transition-colors has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-r-blue/20",
+        "relative flex cursor-pointer items-center gap-4 rounded-2xl border bg-white p-4 transition-colors has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-brand/20",
         checked ? "border-ink shadow-[0_0_0_1px_var(--color-ink)]" : "border-line hover:border-ink/30",
       )}
     >
@@ -89,7 +89,7 @@ export function ChoiceCard({
 export function FormSuccess({ title, children }: { title: string; children: ReactNode }) {
   return (
     <div role="status" className="relative overflow-hidden rounded-[2rem] bg-white p-8 text-center sm:p-12">
-      <span className="spectrum-rule absolute inset-x-0 top-0 !rounded-none" aria-hidden="true" />
+      <span className="brand-rule absolute inset-x-0 top-0 !rounded-none" aria-hidden="true" />
       <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-ok text-white">
         <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="3" aria-hidden="true">
           <path d="M5 12.5l4.5 4.5L19 7.5" strokeLinecap="round" strokeLinejoin="round" />

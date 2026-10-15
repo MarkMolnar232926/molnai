@@ -6,7 +6,7 @@ import { Camera } from "lucide-react";
  */
 export function PhotoPlaceholder({
   caption,
-  tone = "#2563c9",
+  tone = "#1162a9",
   className = "",
   dark = false,
 }: {
@@ -20,7 +20,7 @@ export function PhotoPlaceholder({
       className={`relative isolate flex overflow-hidden rounded-[var(--radius-card)] ${className}`}
       style={{
         background: dark
-          ? `radial-gradient(90% 80% at 80% 10%, color-mix(in oklab, ${tone} 45%, #0b1530), #0b1530 70%)`
+          ? `radial-gradient(90% 80% at 80% 10%, color-mix(in oklab, ${tone} 45%, #0a2540), #0a2540 70%)`
           : `radial-gradient(90% 80% at 80% 10%, color-mix(in oklab, ${tone} 28%, #fff), color-mix(in oklab, ${tone} 8%, #efebe2) 70%)`,
       }}
     >

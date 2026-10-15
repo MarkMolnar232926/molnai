@@ -26,8 +26,8 @@ export function OrderSummary({ totals, shippingLabel, children }: { totals: Retu
           <dd className="font-display text-3xl font-bold tabular-nums">{formatPrice(totals.total)}</dd>
         </div>
       </dl>
-      <p className="mt-4 flex items-center gap-2 rounded-2xl bg-r-gold/15 p-3 text-sm">
-        <Coins className="h-4 w-4 shrink-0 text-r-gold" aria-hidden="true" />
+      <p className="mt-4 flex items-center gap-2 rounded-2xl bg-brand-lime/20 p-3 text-sm">
+        <Coins className="h-4 w-4 shrink-0 text-brand-green-dark" aria-hidden="true" />
         <span>
           <strong>{totals.points} Hűségpont</strong> jár ezért a rendelésért.
         </span>

@@ -47,7 +47,7 @@ export function ProductTabs({ product }: { product: Product }) {
             )}
           >
             {t.label}
-            {active === t.id && <span className="spectrum-rule absolute inset-x-2 -bottom-px !h-[3px]" aria-hidden="true" />}
+            {active === t.id && <span className="brand-rule absolute inset-x-2 -bottom-px !h-[3px]" aria-hidden="true" />}
           </button>
         ))}
       </div>
@@ -59,7 +59,7 @@ export function ProductTabs({ product }: { product: Product }) {
               <p key={p.slice(0, 24)}>{p}</p>
             ))}
             {product.mock && (
-              <p className="flex items-start gap-2 rounded-2xl bg-r-yellow/20 p-3 text-sm text-ink/80">
+              <p className="flex items-start gap-2 rounded-2xl bg-brand-sky/10 p-3 text-sm text-ink/80">
                 <Info className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
                 Demó termék: a termék, az ár és a leírás a koncepcióhoz készült.
               </p>

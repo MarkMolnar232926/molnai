@@ -22,11 +22,17 @@ Zustand (cart and favourites, persisted to `localStorage`) · lucide-react icons
 
 ## Design system
 
-The identity is built on the **TheraBand colour-coded resistance scale**: beige → yellow → red → green → blue → black → silver → gold.
+The identity follows **Thera-Team's own brand**: the logo (`public/brand/thera-team-logo.png`, used with the client's permission) and its colours.
 
-- **Tokens** (`app/globals.css`, `@theme`): ink `#0b1530`, paper `#f7f5f0`, the eight `r-*` resistance colours, semantic `sale` / `ok` / `warn`, a fluid type scale (`text-display`, `text-h1…h3`), radii, easing.
+- **Brand tokens** (`app/globals.css`, `@theme`, mirrored in `lib/brand.ts`), sampled from the logo:
+  - blue `#1162a9` (wordmark)
+  - sky `#1a8fd0`
+  - green `#3aa062` / dark `#237a46`
+  - lime `#8ec85e`
+  - deep navy ink `#0a2540`, cool off-white paper `#f5f7f9`
+- **Motifs**: the logo's blue → green flame becomes the brand gradient. It is used for dividers, headline accents, progress bars and the animated canvas hero bands (`HeroBands`).
+- **TheraBand colours stay product information only.** The beige → gold resistance scale (`r-*` tokens) appears where it describes products: the resistance guide, variant swatches, resistance filters and product illustrations. Functional colours (sale red, stock amber, rating stars) are unchanged.
 - **Typography**: Bricolage Grotesque (display) + Inter (body). Both are subset to Latin-1 + Latin Extended-A, which covers ő and ű, at about 50 KB each.
-- **Motifs**: spectrum rules and dividers, the animated canvas band hero (`HeroBands`), colour swatches on products, the resistance slider.
 - **Imagery**: there is no photography. Products use SVG illustrations (`ProductArt`), and every photo slot is a labelled `PhotoPlaceholder` (`[Fotó: …]`).
 - **Motion**: CSS scroll-driven reveals that need no JS and degrade to static content. Hover states, magnetic CTAs and counters are included, and everything respects `prefers-reduced-motion`.
 
@@ -40,7 +46,7 @@ app/                  routes (Hungarian URLs)
   kosar, penztar      cart, 3-step demo checkout, /penztar/visszaigazolas
   szakembereknek, intezmenyeknek, rolunk, blog/[slug], kapcsolat, info/[slug], fiok, kedvencek, not-found
 components/
-  brand/              Logo, ProductArt (SVG illustrations), PhotoPlaceholder, SpectrumWaves
+  brand/              Logo (official logo via next/image), ProductArt (SVG illustrations), PhotoPlaceholder, SpectrumWaves
   layout/             Header + MegaMenu, MobileNav, Footer, CartDrawer, CommandPalette (Ctrl/Cmd+K), CookieBanner, Toast, PageHero
   home/               Hero, AudienceSelector, ResistanceGuide, CategoryBento, ProductCarousel, BrandStory, ProProgram, EducationBlog, Reviews, Newsletter
   shop/               ProductCard, CategoryView + Filters, ProductDetail + tabs, VariantPicker, QuickView, cart & checkout parts
@@ -59,7 +65,7 @@ lib/                  store (Zustand), Hungarian formatting (28 990 Ft), ribbon 
 
 ## To replace before going live
 
-1. **Logo**: `components/brand/Logo.tsx` and `app/icon.svg` are placeholder wordmarks with a "30" badge.
+1. **Logo file**: the logo is the client's real one (300 px PNG). For crisp retina rendering, swap in a vector (SVG) or high-resolution version at `public/brand/thera-team-logo.png`. The favicon (`app/icon.png`, `app/apple-icon.png`) is generated from it.
 2. **Photography**: every `[Fotó: …]` slot (hero worlds, about/team, product "in use" views). Real product photos should go through `next/image`.
 3. **Copy and figures**: company history, statistics, discount tiers (`data/programs.ts`), timeline (`data/site.ts`), address and opening hours, and the TheraBand partner logo (with brand-owner approval).
 4. **Legal texts**: ÁSZF, Adatvédelem, and shipping/payment terms (`data/info.ts`) are placeholders.

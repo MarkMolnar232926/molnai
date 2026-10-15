@@ -15,8 +15,8 @@ const AUDIENCES = [
     points: ["CLX és gumikötelek", "Kettlebell és battle rope", "SMR hengerek, Biofreeze"],
     href: "/termekek/funkcionalis",
     cta: "Sport és fitnesz",
-    color: "#2563c9",
-    light: "#8fb6ff",
+    color: "#1162a9",
+    light: "#5bb8ea",
   },
   {
     id: "pro",
@@ -26,8 +26,8 @@ const AUDIENCES = [
     points: ["45 m-es TheraBand tekercsek", "Egyensúlyozó és neuro eszközök", "Akár 15% szakmai kedvezmény"],
     href: "/szakembereknek",
     cta: "Szakmai program",
-    color: "#2e9b57",
-    light: "#6fd39a",
+    color: "#3aa062",
+    light: "#8ec85e",
   },
   {
     id: "family",
@@ -37,8 +37,8 @@ const AUDIENCES = [
     points: ["Szenzoros ösvények", "GONGE egyensúlyozók", "Montessori és logopédia"],
     href: "/termekek/gyerek-fejleszto",
     cta: "Gyerek fejlesztés",
-    color: "#f5c928",
-    light: "#f5c928",
+    color: "#8ec85e",
+    light: "#8ec85e",
   },
   {
     id: "org",
@@ -48,8 +48,8 @@ const AUDIENCES = [
     points: ["Mennyiségi kedvezmény", "Egyedi árajánlat 24 órán belül", "Átutalásos fizetés, számlára"],
     href: "/intezmenyeknek",
     cta: "Intézményi program",
-    color: "#e03a3e",
-    light: "#ff8a8d",
+    color: "#1a8fd0",
+    light: "#5bb8ea",
   },
 ];
 
@@ -86,7 +86,7 @@ export function AudienceSelector() {
                 <span className="relative flex items-start justify-between gap-4">
                   <span
                     className="inline-flex h-14 w-14 items-center justify-center rounded-2xl transition-colors duration-500"
-                    style={{ background: isActive ? a.color : `color-mix(in oklab, ${a.color} 18%, white)`, color: isActive && a.id !== "family" ? "#fff" : "#0b1530" }}
+                    style={{ background: isActive ? a.color : `color-mix(in oklab, ${a.color} 18%, white)`, color: isActive && a.id !== "family" ? "#fff" : "#0a2540" }}
                   >
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </span>

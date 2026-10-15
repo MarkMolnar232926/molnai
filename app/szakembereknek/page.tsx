@@ -59,7 +59,7 @@ export default function ProPage() {
           <>
             Te mozgatod a pácienseidet.
             <br />
-            <span className="text-spectrum">Mi téged.</span>
+            <span className="text-brand-gradient">Mi téged.</span>
           </>
         }
         text="Gyógytornászoknak, edzőknek és rendelőknek: szakmai árak, rendelői kiszerelések és harminc év tapasztalata, egy partnernél."
@@ -83,7 +83,7 @@ export default function ProPage() {
               <article className={`relative h-full overflow-hidden rounded-[var(--radius-card)] p-8 ${"featured" in t ? "on-dark bg-ink text-white" : "bg-white"}`}>
                 <span className="absolute inset-x-0 top-0 h-2" style={{ background: t.color }} aria-hidden="true" />
                 {"featured" in t && (
-                  <span className="mb-4 inline-block rounded-full bg-r-green px-3 py-1 text-xs font-bold text-white">Legnépszerűbb</span>
+                  <span className="mb-4 inline-block rounded-full bg-brand-green-dark px-3 py-1 text-xs font-bold text-white">Legnépszerűbb</span>
                 )}
                 <h3 className="text-xl font-bold">{t.name}</h3>
                 <p className={`mt-1 text-sm ${"featured" in t ? "text-white/70" : "text-muted"}`}>{t.who}</p>
@@ -91,7 +91,7 @@ export default function ProPage() {
                 <ul className="mt-8 space-y-3">
                   {t.perks.map((p) => (
                     <li key={p} className="flex gap-3">
-                      <Check className={`mt-0.5 h-5 w-5 shrink-0 ${"featured" in t ? "text-[#6fd39a]" : "text-ok"}`} aria-hidden="true" />
+                      <Check className={`mt-0.5 h-5 w-5 shrink-0 ${"featured" in t ? "text-[#8ec85e]" : "text-ok"}`} aria-hidden="true" />
                       {p}
                     </li>
                   ))}
@@ -139,13 +139,13 @@ export default function ProPage() {
 
       <section className="bg-paper-2 py-20 lg:py-28" aria-labelledby="elonyok">
         <div className="container-x grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:items-center">
-          <PhotoPlaceholder caption="gyógytornász TheraBand szalaggal dolgozik a pácienssel" tone="#2e9b57" className="aspect-[4/5] w-full" />
+          <PhotoPlaceholder caption="gyógytornász TheraBand szalaggal dolgozik a pácienssel" tone="#3aa062" className="aspect-[4/5] w-full" />
           <div>
             <SectionHeading eyebrow="Előnyök" title={<span id="elonyok">Több, mint kedvezmény</span>} />
             <ul className="grid gap-6 sm:grid-cols-2">
               {BENEFITS.map(({ icon: Icon, title, text }, i) => (
                 <Reveal as="li" key={title} delay={i * 60} className="flex gap-4">
-                  <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-r-green">
+                  <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-brand-green-dark">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </span>
                   <span>
@@ -164,10 +164,13 @@ export default function ProPage() {
         <ol className="grid gap-4 md:grid-cols-3">
           {STEPS.map(({ icon: Icon, title, text }, i) => (
             <Reveal as="li" key={title} delay={i * 100} className="relative rounded-[var(--radius-card)] bg-white p-8">
-              <span className="font-display text-7xl font-extrabold text-paper-2" aria-hidden="true">
-                0{i + 1}
-              </span>
-              <Icon className="absolute right-8 top-8 h-7 w-7 text-r-blue" aria-hidden="true" />
+              {/* Decorative step number as pseudo-content, so it is not read out or contrast-checked as text. */}
+              <span
+                data-step={`0${i + 1}`}
+                className="block font-display text-7xl font-extrabold leading-none text-brand-sky/15 before:content-[attr(data-step)]"
+                aria-hidden="true"
+              />
+              <Icon className="absolute right-8 top-8 h-7 w-7 text-brand" aria-hidden="true" />
               <h3 className="mt-2 text-xl font-bold">{title}</h3>
               <p className="mt-2 text-muted">{text}</p>
             </Reveal>

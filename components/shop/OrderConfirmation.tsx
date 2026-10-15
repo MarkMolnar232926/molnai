@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { ButtonLink } from "@/components/ui/Button";
-import { RESISTANCE } from "@/data/resistance";
 import { formatPrice } from "@/lib/format";
 import { ORDER_KEY } from "./Checkout";
 
@@ -29,11 +28,7 @@ export function OrderConfirmation() {
   return (
     <section className="container-x py-16 sm:py-24">
       <div className="relative mx-auto max-w-2xl overflow-hidden rounded-[2rem] bg-white px-6 py-14 text-center sm:px-12">
-        <div className="absolute inset-x-0 top-0 flex h-2" aria-hidden="true">
-          {RESISTANCE.map((r) => (
-            <span key={r.id} className="flex-1" style={{ background: r.color }} />
-          ))}
-        </div>
+        <div className="absolute inset-x-0 top-0 h-2 bg-brand-gradient" aria-hidden="true" />
         <span className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-ok text-white">
           <svg viewBox="0 0 24 24" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth="3" aria-hidden="true">
             <path d="M5 12.5l4.5 4.5L19 7.5" strokeLinecap="round" strokeLinejoin="round" />

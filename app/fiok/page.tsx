@@ -17,10 +17,10 @@ export default function AccountPage() {
         </div>
         <div className="on-dark flex flex-col justify-between rounded-[2rem] bg-ink p-8 text-white sm:p-10">
           <div>
-            <p className="eyebrow text-r-yellow">Szakember vagy?</p>
+            <p className="eyebrow text-brand-lime">Szakember vagy?</p>
             <h2 className="mt-4 text-h3 font-bold">Regisztrálj szakmai fiókot, és vásárolj akár 20% kedvezménnyel.</h2>
           </div>
-          <Link href="/szakembereknek#regisztracio" className="mt-10 inline-flex min-h-12 items-center justify-center rounded-full bg-r-yellow px-6 font-semibold text-ink">
+          <Link href="/szakembereknek#regisztracio" className="mt-10 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-lime px-6 font-semibold text-ink">
             Szakmai regisztráció
           </Link>
         </div>

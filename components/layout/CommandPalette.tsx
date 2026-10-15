@@ -124,9 +124,9 @@ export function CommandPalette() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -12, scale: 0.98 }}
             transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-2xl overflow-hidden rounded-3xl bg-paper shadow-[0_40px_120px_-30px_rgb(11_21_48/0.7)]"
+            className="relative w-full max-w-2xl overflow-hidden rounded-3xl bg-paper shadow-[0_40px_120px_-30px_rgb(10_37_64/0.7)]"
           >
-            <div className="spectrum-rule !rounded-none" aria-hidden="true" />
+            <div className="brand-rule !rounded-none" aria-hidden="true" />
             <div className="flex items-center gap-3 border-b border-line px-5">
               <Search className="h-5 w-5 shrink-0 text-muted" aria-hidden="true" />
               <input

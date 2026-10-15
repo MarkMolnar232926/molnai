@@ -2,7 +2,7 @@ import type { ArtKind } from "@/lib/types";
 import { ribbon } from "@/lib/ribbon";
 
 const HI = { fill: "#fff", opacity: 0.35 };
-const SH = { fill: "#0b1530", opacity: 0.1 };
+const SH = { fill: "#0a2540", opacity: 0.1 };
 
 function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
   switch (kind) {
@@ -30,8 +30,8 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
         <>
           <ellipse cx="100" cy="172" rx="66" ry="7" {...SH} />
           <path d="M52 64 C 40 150, 160 150, 148 64" fill="none" stroke={tone} strokeWidth="12" strokeLinecap="round" />
-          <rect x="34" y="38" width="36" height="30" rx="10" fill="#0b1530" />
-          <rect x="130" y="38" width="36" height="30" rx="10" fill="#0b1530" />
+          <rect x="34" y="38" width="36" height="30" rx="10" fill="#0a2540" />
+          <rect x="130" y="38" width="36" height="30" rx="10" fill="#0a2540" />
           <rect x="40" y="44" width="10" height="18" rx="5" fill="#fff" opacity=".18" />
           <rect x="136" y="44" width="10" height="18" rx="5" fill="#fff" opacity=".18" />
         </>
@@ -49,8 +49,8 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
         <>
           <ellipse cx="100" cy="174" rx="58" ry="8" {...SH} />
           <circle cx="100" cy="102" r="64" fill={tone} />
-          <path d="M40 92 C 80 120, 120 120, 162 90" fill="none" stroke="#0b1530" strokeOpacity=".14" strokeWidth="3" />
-          <path d="M70 46 C 90 80, 92 130, 76 160" fill="none" stroke="#0b1530" strokeOpacity=".1" strokeWidth="3" />
+          <path d="M40 92 C 80 120, 120 120, 162 90" fill="none" stroke="#0a2540" strokeOpacity=".14" strokeWidth="3" />
+          <path d="M70 46 C 90 80, 92 130, 76 160" fill="none" stroke="#0a2540" strokeOpacity=".1" strokeWidth="3" />
           <ellipse cx="78" cy="72" rx="20" ry="13" transform="rotate(-30 78 72)" {...HI} />
         </>
       );
@@ -61,7 +61,7 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
           <g transform="rotate(-14 100 100)">
             <rect x="30" y="68" width="140" height="64" rx="32" fill={tone} />
             {[56, 78, 100, 122, 144].map((x) => (
-              <rect key={x} x={x} y="70" width="8" height="60" rx="4" fill="#0b1530" opacity=".16" />
+              <rect key={x} x={x} y="70" width="8" height="60" rx="4" fill="#0a2540" opacity=".16" />
             ))}
             <rect x="40" y="76" width="120" height="10" rx="5" {...HI} />
           </g>
@@ -70,12 +70,12 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
     case "disc":
       return (
         <>
-          <ellipse cx="100" cy="146" rx="78" ry="22" fill="#0b1530" opacity=".1" />
+          <ellipse cx="100" cy="146" rx="78" ry="22" fill="#0a2540" opacity=".1" />
           <ellipse cx="100" cy="128" rx="74" ry="24" fill={tone} />
           <ellipse cx="100" cy="116" rx="74" ry="24" fill={tone} />
           <ellipse cx="100" cy="116" rx="74" ry="24" fill="#fff" opacity=".18" />
           {[-44, -22, 0, 22, 44].map((dx) =>
-            [-8, 8].map((dy) => <circle key={`${dx}${dy}`} cx={100 + dx} cy={116 + dy} r="3.5" fill="#0b1530" opacity=".18" />),
+            [-8, 8].map((dy) => <circle key={`${dx}${dy}`} cx={100 + dx} cy={116 + dy} r="3.5" fill="#0a2540" opacity=".18" />),
           )}
         </>
       );
@@ -84,7 +84,7 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
         <>
           <ellipse cx="100" cy="164" rx="70" ry="7" {...SH} />
           <path d="M30 128 Q 100 40, 170 128" fill="none" stroke={tone} strokeWidth="28" strokeLinecap="round" />
-          <path d="M30 128 Q 100 40, 170 128" fill="none" stroke="#0b1530" strokeOpacity=".18" strokeWidth="28" strokeDasharray="3 9" />
+          <path d="M30 128 Q 100 40, 170 128" fill="none" stroke="#0a2540" strokeOpacity=".18" strokeWidth="28" strokeDasharray="3 9" />
           <path d="M40 116 Q 100 44, 160 116" fill="none" stroke="#fff" strokeOpacity=".3" strokeWidth="4" strokeLinecap="round" />
         </>
       );
@@ -94,7 +94,7 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
           <ellipse cx="100" cy="170" rx="54" ry="7" {...SH} />
           <rect x="58" y="70" width="84" height="92" rx="26" fill={tone} />
           {[64, 84, 104, 124].map((x) => (
-            <rect key={x} x={x} y="40" width="14" height="40" rx="7" fill="#0b1530" opacity=".85" />
+            <rect key={x} x={x} y="40" width="14" height="40" rx="7" fill="#0a2540" opacity=".85" />
           ))}
           <rect x="68" y="84" width="14" height="60" rx="7" {...HI} />
         </>
@@ -105,9 +105,9 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
           <ellipse cx="100" cy="166" rx="66" ry="7" {...SH} />
           <path d="M126 140 L 186 170 L 180 184 L 118 154 Z" fill={tone} opacity=".9" />
           <circle cx="92" cy="100" r="58" fill={tone} />
-          <circle cx="92" cy="100" r="58" fill="none" stroke="#0b1530" strokeOpacity=".12" strokeWidth="1.5" strokeDasharray="1 4" />
+          <circle cx="92" cy="100" r="58" fill="none" stroke="#0a2540" strokeOpacity=".12" strokeWidth="1.5" strokeDasharray="1 4" />
           <circle cx="92" cy="100" r="26" fill="#f7f5f0" />
-          <circle cx="92" cy="100" r="26" fill="none" stroke="#0b1530" strokeOpacity=".15" strokeWidth="4" />
+          <circle cx="92" cy="100" r="26" fill="none" stroke="#0a2540" strokeOpacity=".15" strokeWidth="4" />
           <path d="M52 70 A 50 50 0 0 1 90 48" fill="none" stroke="#fff" strokeOpacity=".4" strokeWidth="6" strokeLinecap="round" />
         </>
       );
@@ -116,11 +116,11 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
         <>
           <ellipse cx="100" cy="172" rx="50" ry="7" {...SH} />
           <path d="M64 40 L 136 40 L 128 150 Q 100 164 72 150 Z" fill={tone} />
-          <rect x="80" y="150" width="40" height="18" rx="4" fill="#0b1530" />
-          <rect x="60" y="34" width="80" height="10" rx="3" fill="#0b1530" opacity=".85" />
+          <rect x="80" y="150" width="40" height="18" rx="4" fill="#0a2540" />
+          <rect x="60" y="34" width="80" height="10" rx="3" fill="#0a2540" opacity=".85" />
           <rect x="78" y="74" width="44" height="40" rx="6" fill="#fff" opacity=".85" />
           <rect x="86" y="84" width="28" height="4" rx="2" fill={tone} />
-          <rect x="86" y="94" width="20" height="4" rx="2" fill="#0b1530" opacity=".3" />
+          <rect x="86" y="94" width="20" height="4" rx="2" fill="#0a2540" opacity=".3" />
           <rect x="70" y="50" width="8" height="90" rx="4" {...HI} />
         </>
       );
@@ -140,8 +140,8 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
           <ellipse cx="100" cy="164" rx="80" ry="8" {...SH} />
           <path d="M20 152 L 132 152 L 132 120 L 20 120 Z" fill={tone} opacity=".75" />
           <circle cx="140" cy="118" r="38" fill={tone} />
-          <circle cx="140" cy="118" r="26" fill="none" stroke="#0b1530" strokeOpacity=".2" strokeWidth="3" />
-          <circle cx="140" cy="118" r="14" fill="none" stroke="#0b1530" strokeOpacity=".2" strokeWidth="3" />
+          <circle cx="140" cy="118" r="26" fill="none" stroke="#0a2540" strokeOpacity=".2" strokeWidth="3" />
+          <circle cx="140" cy="118" r="14" fill="none" stroke="#0a2540" strokeOpacity=".2" strokeWidth="3" />
           <path d="M112 92 A 38 38 0 0 1 152 82" fill="none" stroke="#fff" strokeOpacity=".4" strokeWidth="5" strokeLinecap="round" />
         </>
       );
@@ -160,7 +160,7 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
       return (
         <>
           <ellipse cx="100" cy="160" rx="76" ry="8" {...SH} />
-          <rect x="56" y="94" width="88" height="14" rx="7" fill="#0b1530" opacity=".8" />
+          <rect x="56" y="94" width="88" height="14" rx="7" fill="#0a2540" opacity=".8" />
           <polygon points="18,76 46,64 58,98 46,134 18,124 8,100" fill={tone} />
           <polygon points="182,76 154,64 142,98 154,134 182,124 192,100" fill={tone} />
           <polygon points="20,80 44,70 50,88 22,94" {...HI} />
@@ -173,7 +173,7 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
           <ellipse cx="100" cy="170" rx="80" ry="7" {...SH} />
           <path d="M10 80 C 40 30, 60 150, 100 100 S 160 40, 190 120" fill="none" stroke={tone} strokeWidth="20" strokeLinecap="round" />
           <path d="M10 80 C 40 30, 60 150, 100 100 S 160 40, 190 120" fill="none" stroke="#fff" strokeOpacity=".3" strokeWidth="20" strokeDasharray="4 8" />
-          <rect x="0" y="70" width="22" height="30" rx="6" fill="#0b1530" transform="rotate(-30 10 80)" />
+          <rect x="0" y="70" width="22" height="30" rx="6" fill="#0a2540" transform="rotate(-30 10 80)" />
         </>
       );
     case "box":
@@ -184,7 +184,7 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
           <polygon points="100,40 170,70 100,100 30,70" fill="#fff" opacity=".3" />
           <polygon points="30,70 100,100 100,166 30,136" fill={tone} />
           <polygon points="170,70 100,100 100,166 170,136" fill={tone} />
-          <polygon points="170,70 100,100 100,166 170,136" fill="#0b1530" opacity=".2" />
+          <polygon points="170,70 100,100 100,166 170,136" fill="#0a2540" opacity=".2" />
         </>
       );
     case "vest":
@@ -195,7 +195,7 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
           {[0, 1, 2].map((r) => (
             <rect key={r} x="62" y={80 + r * 26} width="76" height="18" rx="4" fill="#fff" opacity=".12" />
           ))}
-          <rect x="96" y="70" width="8" height="92" fill="#0b1530" opacity=".25" />
+          <rect x="96" y="70" width="8" height="92" fill="#0a2540" opacity=".25" />
         </>
       );
     case "tiles": {
@@ -208,7 +208,7 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
               <g key={i}>
                 <rect x={34 + (i % 3) * 46} y={44 + Math.floor(i / 3) * 42} width="40" height="36" rx="8" fill={c} />
                 {[0, 1, 2].map((d) => (
-                  <circle key={d} cx={44 + (i % 3) * 46 + d * 10} cy={62 + Math.floor(i / 3) * 42} r="2.6" fill="#0b1530" opacity=".18" />
+                  <circle key={d} cx={44 + (i % 3) * 46 + d * 10} cy={62 + Math.floor(i / 3) * 42} r="2.6" fill="#0a2540" opacity=".18" />
                 ))}
               </g>
             ))}
@@ -223,7 +223,7 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
           {[0, 45, 90, 135].map((a) => (
             <rect key={a} x="97" y="18" width="6" height="26" rx="3" fill={tone} opacity=".35" transform={`rotate(${a} 100 100)`} />
           ))}
-          <rect x="94" y="44" width="12" height="24" rx="5" fill="#0b1530" />
+          <rect x="94" y="44" width="12" height="24" rx="5" fill="#0a2540" />
           <path d="M40 100 L 100 64 L 160 100 L 100 164 Z" fill={tone} />
           <path d="M40 100 L 100 64 L 160 100 Z" fill="#fff" opacity=".3" />
           <circle cx="100" cy="100" r="8" fill="#f5c928" />
@@ -246,7 +246,7 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
           <path d="M28 66 L 84 158 L 116 158 L 172 66 Z" fill={tone} />
           <path d="M28 66 L 84 158 L 96 158 L 60 66 Z" fill="#fff" opacity=".2" />
           <ellipse cx="100" cy="66" rx="72" ry="20" fill={tone} />
-          <ellipse cx="100" cy="66" rx="60" ry="14" fill="#0b1530" opacity=".25" />
+          <ellipse cx="100" cy="66" rx="60" ry="14" fill="#0a2540" opacity=".25" />
         </>
       );
     case "stick":
@@ -269,9 +269,9 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
           <circle cx="128" cy="78" r="20" fill={tone} />
           <circle cx="72" cy="76" r="10" fill="#fff" />
           <circle cx="128" cy="76" r="10" fill="#fff" />
-          <circle cx="74" cy="78" r="5" fill="#0b1530" />
-          <circle cx="130" cy="78" r="5" fill="#0b1530" />
-          <path d="M76 128 Q 100 146 124 128" fill="none" stroke="#0b1530" strokeWidth="4" strokeLinecap="round" />
+          <circle cx="74" cy="78" r="5" fill="#0a2540" />
+          <circle cx="130" cy="78" r="5" fill="#0a2540" />
+          <path d="M76 128 Q 100 146 124 128" fill="none" stroke="#0a2540" strokeWidth="4" strokeLinecap="round" />
           <ellipse cx="82" cy="104" rx="16" ry="8" {...HI} />
         </>
       );
@@ -282,7 +282,7 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
           <g transform="rotate(24 100 100)">
             <rect x="88" y="66" width="24" height="90" fill="#f5c928" />
             <polygon points="88,156 112,156 100,182" fill="#d9c5a0" />
-            <polygon points="96,174 104,174 100,182" fill="#0b1530" />
+            <polygon points="96,174 104,174 100,182" fill="#0a2540" />
             <path d="M80 70 C 80 20, 120 20, 120 70 Z" fill={tone} />
             <circle cx="92" cy="40" r="4" fill="#fff" opacity=".4" />
             <circle cx="104" cy="50" r="4" fill="#fff" opacity=".4" />
@@ -295,9 +295,9 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
           <ellipse cx="100" cy="166" rx="74" ry="9" {...SH} />
           <path d="M30 150 L 170 150 L 150 98 L 50 98 Z" fill={tone} />
           <path d="M50 98 L 150 98 L 146 88 L 54 88 Z" fill="#fff" opacity=".3" />
-          <rect x="54" y="70" width="40" height="14" rx="5" fill="#0b1530" transform="rotate(-12 74 77)" />
-          <rect x="106" y="80" width="40" height="14" rx="5" fill="#0b1530" transform="rotate(12 126 87)" />
-          <rect x="84" y="114" width="32" height="14" rx="4" fill="#0b1530" opacity=".7" />
+          <rect x="54" y="70" width="40" height="14" rx="5" fill="#0a2540" transform="rotate(-12 74 77)" />
+          <rect x="106" y="80" width="40" height="14" rx="5" fill="#0a2540" transform="rotate(12 126 87)" />
+          <rect x="84" y="114" width="32" height="14" rx="4" fill="#0a2540" opacity=".7" />
         </>
       );
     case "dog":
@@ -305,13 +305,13 @@ function Shape({ kind, tone }: { kind: ArtKind; tone: string }) {
         <>
           <ellipse cx="100" cy="164" rx="70" ry="16" fill={tone} opacity=".6" />
           <ellipse cx="100" cy="152" rx="70" ry="16" fill={tone} />
-          <ellipse cx="100" cy="94" rx="42" ry="40" fill="#0b1530" />
-          <ellipse cx="62" cy="82" rx="14" ry="30" fill="#0b1530" transform="rotate(18 62 82)" />
-          <ellipse cx="138" cy="82" rx="14" ry="30" fill="#0b1530" transform="rotate(-18 138 82)" />
+          <ellipse cx="100" cy="94" rx="42" ry="40" fill="#0a2540" />
+          <ellipse cx="62" cy="82" rx="14" ry="30" fill="#0a2540" transform="rotate(18 62 82)" />
+          <ellipse cx="138" cy="82" rx="14" ry="30" fill="#0a2540" transform="rotate(-18 138 82)" />
           <ellipse cx="100" cy="112" rx="22" ry="16" fill="#d9c5a0" />
           <circle cx="86" cy="88" r="5" fill="#fff" />
           <circle cx="114" cy="88" r="5" fill="#fff" />
-          <ellipse cx="100" cy="104" rx="8" ry="6" fill="#0b1530" />
+          <ellipse cx="100" cy="104" rx="8" ry="6" fill="#0a2540" />
         </>
       );
     case "brace":

@@ -11,8 +11,8 @@ const STATS = [
   { to: 350, suffix: "+", label: "intézményi partner*" },
 ];
 
-/** Timeline dots climb the resistance scale, like the company's growth. */
-const DOTS = ["#d9c5a0", "#f5c928", "#e03a3e", "#2563c9", "#c99a2e"];
+/** Timeline dots follow the logo's flame, from blue to green. */
+const DOTS = ["#5bb8ea", "#1a8fd0", "#3aa062", "#8ec85e", "#c4e59f"];
 
 export function BrandStory() {
   return (
@@ -20,11 +20,11 @@ export function BrandStory() {
       <div className="container-x">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-end">
           <Reveal>
-            <p className="eyebrow mb-4 flex items-center gap-3 text-r-yellow">
-              <span className="spectrum-rule inline-block w-8" aria-hidden="true" /> 30 év, 1995 óta
+            <p className="eyebrow mb-4 flex items-center gap-3 text-brand-lime">
+              <span className="brand-rule inline-block w-8" aria-hidden="true" /> 30 év, 1995 óta
             </p>
             <h2 id="tortenet" className="text-h1 font-extrabold">
-              Három évtizede <span className="text-spectrum">ugyanazért</span> dolgozunk: hogy mozogni öröm legyen.
+              Három évtizede <span className="text-brand-gradient">ugyanazért</span> dolgozunk: hogy mozogni öröm legyen.
             </h2>
           </Reveal>
           <Reveal delay={120}>
@@ -54,7 +54,7 @@ export function BrandStory() {
         <p className="mt-3 text-xs text-white/50">* Illusztratív adatok, a valós számokkal cserélendők.</p>
 
         <div className="mt-20 grid gap-10 lg:grid-cols-[1fr_1.4fr]">
-          <PhotoPlaceholder caption="archív fotó, az első iroda 1995-ből" tone="#c99a2e" dark className="aspect-[4/5] max-h-[32rem] w-full" />
+          <PhotoPlaceholder caption="archív fotó, az első iroda 1995-ből" tone="#5bb8ea" dark className="aspect-[4/5] max-h-[32rem] w-full" />
           <ol className="relative space-y-10 border-l border-white/10 pl-8">
             {TIMELINE.map((t, i) => (
               <Reveal as="li" key={t.year} delay={i * 80} className="relative">

@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { RESISTANCE } from "@/data/resistance";
+import { BRAND_SHADES } from "@/lib/brand";
 
 /**
- * Canvas animation: the eight TheraBand resistance colours as flowing, twisting bands.
+ * Canvas animation: eight shades of the Thera-Team logo flame (blue → green) as flowing, twisting bands.
  * Bands lean toward the pointer, as if being stretched. Pauses off-screen; static for reduced motion.
  */
 export function HeroBands({ className = "" }: { className?: string }) {
@@ -16,7 +16,7 @@ export function HeroBands({ className = "" }: { className?: string }) {
     if (!canvas || !ctx) return;
 
     const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const colors = RESISTANCE.map((r) => r.color);
+    const colors = BRAND_SHADES;
     let w = 0;
     let h = 0;
     let raf = 0;
@@ -94,19 +94,10 @@ export function HeroBands({ className = "" }: { className?: string }) {
           ctx.lineTo(bot[s * 2 + 2], bot[s * 2 + 3]);
           ctx.lineTo(bot[s * 2], bot[s * 2 + 1]);
           ctx.closePath();
-          ctx.fillStyle = `rgba(11,21,48,${(0.55 - f) * 0.7})`;
+          ctx.fillStyle = `rgba(10,37,64,${(0.55 - f) * 0.7})`;
           ctx.fill();
         }
 
-        if (i === 5) {
-          // Keep the black band legible on the ink background.
-          ctx.beginPath();
-          ctx.moveTo(top[0], top[1]);
-          for (let s = 1; s <= N; s++) ctx.lineTo(top[s * 2], top[s * 2 + 1]);
-          ctx.strokeStyle = "rgba(169,176,186,.35)";
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
       }
       ctx.restore();
     }

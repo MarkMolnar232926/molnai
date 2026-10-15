@@ -23,7 +23,7 @@ function AnniversarySeal() {
           <textPath href="#seal-circle">{text}</textPath>
         </text>
       </svg>
-      <span className="absolute inset-0 m-auto flex h-16 w-16 items-center justify-center rounded-full bg-r-gold font-display text-2xl font-extrabold text-ink">
+      <span className="absolute inset-0 m-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-lime font-display text-2xl font-extrabold text-ink">
         30
       </span>
     </div>
@@ -35,7 +35,7 @@ export function Hero() {
     <section className="on-dark grain relative isolate overflow-hidden bg-ink text-white" aria-labelledby="hero-title">
       <HeroBands className="absolute inset-0 -z-10 h-full w-full" />
       <div
-        className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(11_21_48/0.92)_0%,rgb(11_21_48/0.75)_45%,rgb(11_21_48/0.15)_100%)] lg:bg-[linear-gradient(90deg,rgb(11_21_48/0.97)_0%,rgb(11_21_48/0.85)_38%,rgb(11_21_48/0)_70%)]"
+        className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(10_37_64/0.92)_0%,rgb(10_37_64/0.75)_45%,rgb(10_37_64/0.15)_100%)] lg:bg-[linear-gradient(90deg,rgb(10_37_64/0.97)_0%,rgb(10_37_64/0.85)_38%,rgb(10_37_64/0)_70%)]"
         aria-hidden="true"
       />
       <AnniversarySeal />
@@ -44,14 +44,14 @@ export function Hero() {
         <div className="max-w-3xl">
           <p className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-ink-2/80 px-4 py-2 text-sm font-medium text-white/85">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-r-yellow opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-r-yellow" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-lime opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-lime" />
             </span>
             Kizárólagos TheraBand forgalmazó · 1995 óta
           </p>
           <h1 id="hero-title" className="mt-7 text-display font-extrabold">
             Társ a<br />
-            <span className="text-spectrum animate-flow">mozgásban!</span>
+            <span className="text-brand-gradient animate-flow">mozgásban!</span>
           </h1>
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-white/80 sm:text-xl">
             Rehabilitációs, sport- és fejlesztőeszközök gyógytornászoknak, sportolóknak, intézményeknek és családoknak.
@@ -84,7 +84,7 @@ export function Hero() {
         <ul className="container-x grid grid-cols-2 gap-x-4 gap-y-6 py-6 lg:grid-cols-4 lg:py-7">
           {TRUST.map(({ icon: Icon, title, text }) => (
             <li key={title} className="flex items-start gap-3">
-              <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-r-yellow">
+              <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-brand-lime">
                 <Icon className="h-5 w-5" aria-hidden="true" />
               </span>
               <span>

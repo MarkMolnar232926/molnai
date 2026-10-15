@@ -50,22 +50,22 @@ const COLUMNS = [
 export function Footer() {
   return (
     <footer className="on-dark relative overflow-hidden bg-ink text-white">
-      <div className="spectrum-rule !h-1.5 !rounded-none" aria-hidden="true" />
+      <div className="brand-rule !h-1.5 !rounded-none" aria-hidden="true" />
       <div className="container-x grid gap-12 py-16 lg:grid-cols-[1.3fr_2fr] lg:py-20">
         <div className="max-w-sm">
-          <Logo dark />
+          <Logo dark size="lg" />
           <p className="mt-6 font-display text-3xl font-bold leading-tight">{SITE.tagline}</p>
           <p className="mt-3 text-muted-dark">
             A TheraBand kizárólagos magyarországi forgalmazója {SITE.since} óta. Szakmai tudás, megbízható eszközök, személyes kiszolgálás.
           </p>
           <div className="mt-8 space-y-3">
-            <a href={SITE.phoneHref} className="flex min-h-11 items-center gap-3 text-lg font-semibold hover:text-r-yellow">
+            <a href={SITE.phoneHref} className="flex min-h-11 items-center gap-3 text-lg font-semibold hover:text-brand-lime">
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10">
                 <Phone className="h-5 w-5" aria-hidden="true" />
               </span>
               {SITE.phone}
             </a>
-            <a href={`mailto:${SITE.email}`} className="flex min-h-11 items-center gap-3 hover:text-r-yellow">
+            <a href={`mailto:${SITE.email}`} className="flex min-h-11 items-center gap-3 hover:text-brand-lime">
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10">
                 <Mail className="h-5 w-5" aria-hidden="true" />
               </span>
@@ -92,7 +92,7 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-3">
           {COLUMNS.map((col) => (
             <nav key={col.title} aria-label={col.title}>
-              <h2 className="eyebrow text-r-yellow">{col.title}</h2>
+              <h2 className="eyebrow text-brand-lime">{col.title}</h2>
               <ul className="mt-5 space-y-1">
                 {col.links.map((l) => (
                   <li key={l.href}>
@@ -116,8 +116,8 @@ export function Footer() {
         <div className="container-x flex flex-col gap-4 py-6 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} {SITE.legalName} · Minden jog fenntartva.</p>
           <p className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full border border-r-yellow/40 px-2.5 py-1 text-xs font-semibold text-r-yellow">Design koncepció / demó</span>
-            <span>Nem a hivatalos webáruház. A logó, fotók és szövegek helyőrzők.</span>
+            <span className="rounded-full border border-brand-lime/50 px-2.5 py-1 text-xs font-semibold text-brand-lime">Design koncepció / demó</span>
+            <span>Nem a hivatalos webáruház. A fotók és a szövegek egy része helyőrző.</span>
           </p>
         </div>
       </div>

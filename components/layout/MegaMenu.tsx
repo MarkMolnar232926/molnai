@@ -27,7 +27,7 @@ export function MegaMenu({ open, onEnter, onClose }: { open: boolean; onEnter: (
           <div className="container-x grid grid-cols-[1fr_18rem] gap-8 py-8">
             <ul className="grid grid-cols-3 gap-3">
               {CATEGORIES.map((c) => (
-                <li key={c.slug} className="group rounded-2xl border border-line bg-white p-4 transition-shadow hover:shadow-[0_20px_40px_-24px_rgb(11_21_48/0.35)]">
+                <li key={c.slug} className="group rounded-2xl border border-line bg-white p-4 transition-shadow hover:shadow-[0_20px_40px_-24px_rgb(10_37_64/0.35)]">
                   <Link href={`/termekek/${c.slug}`} className="flex items-center gap-3" onClick={onClose}>
                     <span className="h-14 w-14 shrink-0 overflow-hidden rounded-xl" style={artBackground(c.accent)}>
                       <ProductArt kind={c.art} tone={c.accent} className="h-full w-full p-1.5 transition-transform duration-500 group-hover:scale-110" />
@@ -69,13 +69,13 @@ export function MegaMenu({ open, onEnter, onClose }: { open: boolean; onEnter: (
                 onClick={onClose}
                 className="group relative flex flex-1 flex-col overflow-hidden rounded-2xl bg-ink p-5 text-white on-dark"
               >
-                <span className="eyebrow text-r-yellow">Kiemelt termék</span>
+                <span className="eyebrow text-brand-lime">Kiemelt termék</span>
                 <span className="mt-3 flex-1">
                   <ProductArt kind={FEATURED.art} tone={FEATURED.tone} className="mx-auto h-36 w-36 transition-transform duration-700 group-hover:rotate-[-6deg] group-hover:scale-105" />
                 </span>
                 <span className="font-display text-lg font-bold leading-tight">{FEATURED.name}</span>
                 <Price price={fp.price} oldPrice={FEATURED.oldPrice} from={fp.hasRange} size="sm" dark className="mt-2" />
-                <span className="spectrum-rule absolute inset-x-0 bottom-0 !rounded-none" aria-hidden="true" />
+                <span className="brand-rule absolute inset-x-0 bottom-0 !rounded-none" aria-hidden="true" />
               </Link>
               <Link
                 href="/termekek/akciok"
